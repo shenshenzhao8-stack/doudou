@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "ModalDoudouPrize": "/components/modal-doudou-prize/modal-doudou-prize",
+        "ModalDoudouRule": "/components/modal-dou-rule/modal-dou-rule",
+        "ModalUserAgreement": "/components/modal-user-agreement/modal-user-agreement"
+    }
+}

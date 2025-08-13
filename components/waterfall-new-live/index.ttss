@@ -1,0 +1,95 @@
+/* pages/waterfall/waterfall.wxss */
+.container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.loading {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  color: #999;
+}
+
+.waterfall-container {
+  height: 100%;
+  width: 100%;
+}
+
+.columns-wrapper {
+  display: flex;
+  padding: 20rpx;
+  gap: 20rpx;
+}
+
+.waterfall-column {
+  width: 49%;
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.waterfall-card {
+  background-color: #fff;
+  border-radius: 12rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  /* height: 400rpx; */
+}
+
+.waterfall-card.active {
+  /* background-color: #FF4D4F; */
+  /* transform: translateY(-4rpx); */
+}
+
+.waterfall-card.active .card-title,
+.waterfall-card.active .card-price {
+  /* color: white; */
+}
+
+.card-image {
+  width: 100%;
+  /* height: 400rpx; */
+  height: 192px;
+  display: block;
+}
+
+.card-info {
+  padding: 20rpx;
+}
+
+.card-title {
+  font-size: 28rpx;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-price {
+  font-size: 32rpx;
+  color: #FF4D4F;
+  font-weight: bold;
+  margin-top: 12rpx;
+}
+
+.live-container {
+  width: 100%;
+  height: 192px;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  overflow: hidden;
+  
+}
+
+.live {
+  width: 150%;
+  padding: 0 !important;
+  border-radius: none !important
+}

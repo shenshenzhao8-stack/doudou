@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="cover {{coverShow ? 'cover-show' : ''}}" style="height: {{leftIconInfo.bottom + 10}}px;"></view>
+    <image class="custom-icon" src="/assets/custom-icon.png" style="margin-top: {{customNavigation.marginTop}}px; margin-left:{{leftIconInfo.width+10}}px;"></image>
+    <view class="user-con">
+        <view class="avatar-container">
+            <view class="avatar">
+                <image class="avatar-icon" src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '/assets/my/user_icon.png'}}" mode="aspectFit" bindtap="getUserProfile" />
+            </view>
+            <view class="user-info">
+                <text class="username"> {{ userInfo.nickName ? userInfo.nickName : '抖音商城上新了用户' }}</text>
+            </view>
+        </view>
+        <view class="user-section">
+            <view class="func-grid">
+                <view class="func-item" bindtap="goCard">
+                    <image class="func-icon" src="/assets/my/coupons.png" />
+                    <text class="func-tit">卡券包</text>
+                </view>
+                <view class="line"></view>
+                <view class="func-item" bindtap="goParticipate">
+                    <image class="func-icon" src="/assets/my/participate.png" />
+                    <text class="func-tit">已参与</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{products.length > 0 ? 'my_con_bg' : ''}}">
+        <waterfall-newReleases bg='my-waterfall-bg' list="{{products}}"   bind:handleGoods="handleGoods"></waterfall-newReleases> 
+        <view class="not-data" tt:if="{{dataStatus === 'not-more-data'}}">暂无更多数据</view>
+        <view class="not-data" tt:if="{{dataStatus === 'loading'}}">Loading...</view>
+        <view class="noshop" tt:if="{{dataStatus === 'not-data'}}">
+            <image class="noshop-img" src="../../assets/noshop.png"></image>
+            <text class="noshop-tip-title">新品正在赶来的路上,敬请期待哦~</text>
+        </view>
+    </view>
+</view>
+
+<!-- 用户协议授权 -->
+<ModalUserAgreement visible="{{modalUserAgreementVisible}}" pageName="my" bind:handleTap="handleModalUserAgreementTap" bind:cancel="handleCanel" isPrivacyPolicy="{{true}}" />

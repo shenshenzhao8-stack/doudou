@@ -1,0 +1,19 @@
+<view class="occlusion-layer" tt:if="{{internalVisible}}" catchtap="handleTap">
+    <view class="content" catchtap="noop">
+        <slot>
+            <view class="default-content">
+                <view class="title">尖货抽签规则说明</view>
+                <view class="text">
+                   <text class="description">
+                    （仅用于段落文字展示，非最终说明文件）
+                    \n
+                    一、活动时间                                        
+                   </text>
+                </view>
+            </view>
+        </slot>
+        <!-- <view class="cancel">
+            <image src="/assets/doudou/close.png" bindtap="handleTap"></image>
+        </view> -->
+    </view>
+</view>

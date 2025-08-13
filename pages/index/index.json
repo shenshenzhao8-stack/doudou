@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "banner": "/components/banner/index",
+    "waterfall-newReleases": "/components/waterfall-newReleases/index",
+    "waterfall-live": "/components/waterfall-live/index",
+    "waterfall-spoiler": "/components/waterfall-spoiler/index",
+    "tab-bar": "/components/tab-bar/index",
+    "tabs": "/components/tabs/tabs",
+    "waterfall-new-live": "/components/waterfall-new-live/index",
+    "index-banner": "/components/index-banner/index-banner"
+  },
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom"
+}

@@ -1,0 +1,50 @@
+<view class="page-index">
+    <view class="cover {{coverShow ? 'cover-show' : ''}}" style="height: {{leftIconInfo.bottom + 10}}px;"></view>
+    <image class="custom-icon" src="/assets/custom-icon.png" style="margin-top: {{customNavigation.marginTop}}px; margin-left:{{leftIconInfo.width+10}}px;"></image>
+    <index-banner tt:if="{{bannerList.length!==0}}" productList="{{bannerList}}" source="{{source}}"></index-banner> 
+    <!-- <banner tt:if="{{bannerList.length!==0}}" productList="{{bannerList}}" source="{{source}}"></banner> -->
+    <image tt:if="{{showBannnerDefault}}" class="index-bannner-default" src="{{imgUrl}}/indexBannnerDefault.png"></image>
+    <view class="page-content">
+        <view class="page-menu">
+            <view class="tabs-item {{currentIndex === index ? 'tabs-item-active' : ''}}" tt:for="{{sortList}}" tt:key="index" data-name="{{item.title}}" data-index="{{index}}"  bindtap="jumpAd">
+                <image class="item-gif" src="{{currentIndex === index ? item.gif : item.icon}}"></image>
+                <view class="tabs-title">
+                    {{item.title}}
+                    <image class="icon_arrow" src="../../assets/icon_arrow.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="content">
+            <tabs options="{{tabList}}" current="{{current}}" bind:change="switchTab"></tabs>
+            <view>
+                <waterfall-newReleases list="{{product_items}}" ads="{{ads}}" tabName="{{tabName}}" bind:handleGoods="handleGoods" bind:handleAdGoods="handleAdGoods"></waterfall-newReleases>
+                <view class="noshop" tt:if="{{noShopTips}}">
+                    <image class="noshop-img" src="../../assets/noshop.png"></image>
+                    <text class="noshop-tip-title">新品正在赶来的路上,敬请期待哦~</text>
+                </view>
+                <text class="no_data_tip" tt:if="{{!hasMore && product_items.length !== 0}}">暂无更多数据</text>
+            </view>
+            <!-- <scroll-view scroll-y="{{true}}" scroll-with-animation="{{true}}" class="draw-scroll" lower-threshold="{{100}}">
+                <waterfall-newReleases list="{{product_items}}" ads="{{ads}}"></waterfall-newReleases>
+                <view class="noshop" tt:if="{{noShopTips}}">
+                    <image class="noshop-img" src="../../assets/noshop.png"></image>
+                    <text class="noshop-tip-title">新品正在赶来的路上,敬请期待哦~</text>
+                </view>
+
+                <text class="no_data_tip" tt:if="{{!hasMore && product_items.length !== 0}}">暂无更多数据</text>
+            </scroll-view> -->
+        </view>
+        <image class="suspension-box" bindtap="handlDoudou" src="{{imgUrl}}/dd.gif"></image>
+    </view>
+
+    <view class="dialog" tt:if="{{internalVisible}}" catchtap="handleTap">
+        <view class="content" catchtap="noop">
+            <image class="logo" src="{{imgUrl}}/loginchou.png" bindtap="handldrawlots" tt:if="{{dislogShow[0]}}"></image>
+            <image class="index-dialog-img" src="{{imgUrl}}/index-dialog2.png" bindtap="handldrawlots" tt:if="{{dislogShow[1]}}"></image>
+            <view class="cancel">
+                <image class="dialof-close-btn" src="{{imgUrl}}/cancel.png" bindtap="handleTap"></image>
+            </view>
+        </view>
+    </view>
+
+</view>

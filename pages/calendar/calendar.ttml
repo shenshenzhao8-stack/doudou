@@ -1,0 +1,106 @@
+<view class="calendar-index">
+    <view tt:if="{{isLoad&&isBanner===false}}" class="page-left-title {{coverShow ? 'cover-show-page-left-title' : ''}}" style="left:{{leftIconInfo.width+13}}px; top:{{leftIconInfo.top}}px; line-height: {{leftIconInfo.height}}px;">上新日历</view>
+    <view tt:if="{{isLoad&&isBanner}}" class="cover-show-page-left-title" style="left:{{leftIconInfo.width+13}}px; top:{{leftIconInfo.top}}px; line-height: {{leftIconInfo.height}}px;">上新日历</view>
+    <view class="cover {{coverShow ? 'cover-show' : ''}}" style="height: {{leftIconInfo.bottom + 10}}px;"></view>
+    <view class="swiper-box" style="{{currentBgImageStyle}}" tt:if="{{ swiperItems.length !== 0 }}">
+        <view class="container">
+            <view class="swiper-container">
+                <swiper class="calendar-swiper" circular="{{true}}" indicator-dots="{{false}}" autoplay="{{true}}" current="{{activeIndex}}" bindchange="handleSwiperChange" previous-margin="60rpx" next-margin="60rpx">
+                    <swiper-item bindtap="handleSwiperDetails" data-item="{{item}}" tt:for="{{swiperItems}}" tt:for-item="item" tt:for-index="index" tt:key="id" class="swiper-item">
+                        <view class="item-content-wrapper {{activeIndex === index ? 'active' : ''}}">
+                            <view class="swiper-header">
+                                <view class="swiper-header-left">
+                                    <view class="swiper-header-left-calendar">
+                                        <text class="day">{{calendarDate.currentDay}}</text>
+                                        <text class="month">{{calendarDate.currentMonth}}</text>
+                                    </view>
+
+                                    <view class="week-box">
+                                        <view class="week" tt:for="{{calendarDate.currentWeekDay}}">
+                                            {{item}}
+                                        </view>
+                                    </view>
+
+                                </view>
+                                <image class="calendar-logo" src="/assets/calendar-logo-new.png"></image>
+                            </view>
+                            <image class="item-image" src="{{item.image_url}}"></image>
+                            <view class="item-text {{activeIndex === index ? 'slide-animate' : ''}}">{{item.title}}</view>
+                            <view class="panic-buying-btn {{activeIndex === index ? 'slide-animate' : ''}}" bindtap="panicBuying" data-item="{{item}}">立即抢购</view>
+
+                        </view>
+
+                    </swiper-item>
+                </swiper>
+                <view class="current-dot">
+                    <block tt:for="{{swiperItems}}">
+                        <view class="dot {{index==activeIndex?'dot-on':''}}"></view>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="calendar-content" style="top: {{top}}">
+        <view class="content">
+            <scroll-view scroll-y="{{true}}" scroll-with-animation="{{true}}" class="draw-scroll">
+                <view class="tabs">
+                    <view class="tabs-item {{currentIndex === index ? 'tabs-item-active' : ''}}" tt:for="{{tabList}}" tt:key="index" data-index="{{index}}" data-id="{{item.id}}" bindtap="switchTab">
+                        <view class="tabs-item-month">
+                            <view class="calendar-zh">
+                                {{item.title}}
+                            </view>
+                            <view class="calendar-cn">
+                                {{item.english_title}}
+                            </view>
+                        </view>
+
+                        <image tt:if="{{hideTabAnimating && prevIndex === index}}" class="month-bg" src="../../assets/tab_hide.gif?{{gifKeyMap[index] || ''}}" />
+
+                        <image tt:if="{{currentIndex === index}}" class="month-bg" src="../../assets/tab_show.gif?{{gifKeyMap[index] || ''}}" />
+                    </view>
+                </view>
+
+
+                <view class="shop-list">
+                    <view class="shop-list-item" id="shop-item-{{item.product_id}}" bindtap="goShopDetails" tt:for="{{product_items}}" data-id="{{item.product_id}}" data-item="{{item}}">
+                        <view class="shop-img-box">
+                            <!-- <view class="week-new-tag">
+                                <image class="new-tag-icon" lazy-load src="../../assets/new-tag-icon.png"></image>
+                                {{item.tag}}
+                            </view> -->
+                            <image class="shop-img" src="{{item.imageUrl}}"></image>
+                        </view>
+                        <view class="shop-info">
+                            <text class="shop-title">{{item.title}}</text>
+                            <view class="new-time-box">
+                                <text class="time-text">上新时间</text>
+                                <text class="date">{{item.new_up_time}}</text>
+                            </view>
+                            <text class="sell_num">已售{{item.sellNumStr}}</text>
+                            <view class="info-footer">
+                                <view class="price-box">
+                                    <text class="symbol">¥</text>
+                                    <view class="price">{{item.priceArr[0]}}
+                                        <text tt:if="{{item.priceArr[1]}}" class="price-fen">{{'.'+item.priceArr[1]}}</text>
+                                    </view>
+                                </view>
+                                <view class="buy-btn">
+                                    点击购买 <image class="icon_arrow" src="../../assets/calendar-arrow.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+
+                </view>
+                <view class="noshop" tt:if="{{noData}}">
+                    <image class="noshop-img" src="{{imgUrl}}/noshop.png"></image>
+                    <text class="noshop-tip-title">新品正在赶来的路上,敬请期待哦~</text>
+                </view>
+
+                <text class="no_data_tip" tt:if="{{noMore && !noData}}">暂无更多数据</text>
+
+            </scroll-view>
+
+        </view>
+    </view>
+</view>

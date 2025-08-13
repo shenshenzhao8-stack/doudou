@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Modal": "/components/modal-dou/modal-dou",
+    "ModalCode": "/components/modal-code/modal-code"
+  }
+}

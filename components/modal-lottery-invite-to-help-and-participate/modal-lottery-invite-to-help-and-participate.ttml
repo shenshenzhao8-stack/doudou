@@ -1,0 +1,19 @@
+<view>
+  <Modal visible="{{visible}}" bind:cancel="handleCanel">
+    <view class="modal-lottery">
+      <image src="{{OSS_URL}}/modal-lottery-invite-to-help-and-participate.png" class="modal-lottery-image"></image>
+      <view class="modal-lottery-title"><text class="name line-clamp-one">{{shareInfo.shareName}}</text>邀你助力</view>
+      <view class="modal-lottery-content">
+        <view class="image-box">
+          <image src="{{detail.image_url}}"></image>
+        </view>
+        <text>{{detail.title}}</text>
+      </view>
+      <view class="modal-lottery-footer">
+        <button class="modal-lottery-footer-button" bindtap="handleTap">参与并助力</button>
+      </view>
+    </view>
+  </Modal>
+</view>
+
+<ModalUserAgreement visible="{{modalUserAgreementVisible}}" isPrivacyPolicy="{{true}}" bind:handleTap="handleUserAgreementTap" bind:cancel="handleUserAgreementCancel" />

@@ -1,0 +1,23 @@
+<!-- components/lottery-card/index.wxml -->
+<view class="lottery-container">
+  <view class="card" wx:for="{{list}}" wx:key="index">
+    <!-- 左侧状态条 -->
+    <view class="status-bar {{item.status === 0 ? 'pending' : 'lost'}}">
+      <view class="progress-line" wx:if="{{item.status === 1}}"></view>
+    </view>
+
+    <!-- 商品信息 -->
+    <view class="content">
+      <view class="image-placeholder"></view>
+      <view class="info-box">
+        <view class="info">
+          <text class="title">{{item.title}}</text>
+          <text class="time">开奖时间 {{item.time}}</text>
+      </view>
+      <view class="status-tag {{item.status === 0 ? 'pending' : 'lost'}}">
+        {{item.status === 0 ? '待开奖' : '未中奖'}}
+      </view>
+      </view>
+    </view>
+  </view>
+</view>

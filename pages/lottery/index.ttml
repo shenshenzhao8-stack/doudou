@@ -1,0 +1,29 @@
+<scroll-view refresher-enabled scroll-y class="lottery" bindrefresherrefresh="onRefreshRefresh" refresher-triggered="{{isRefreshTriggered}}" bindscrolltolower="handleBindscrolltolower"  bindscroll="handleBindscroll">
+  <view class="cover {{coverShow ? 'cover-show' : ''}}" style="height: {{leftIconInfo.bottom + 10}}px;" tt:if="{{bannerList.length != 0}}"></view>
+
+  <image class="custom-icon" src="/assets/custom-icon.png" style="margin-top: {{customNavigation.marginTop}}px; margin-left:{{leftIconInfo.width+10}}px;"></image>
+
+  <!-- TODO 确定颜色 -->
+  <view class="custom-header"  tt:if="{{bannerList.length == 0}}" style="height: {{leftIconInfo.bottom + 10}}px;"></view>
+
+  <Banner productList="{{bannerList}}" source="{{bannerSource}}" tt:if="{{bannerList.length != 0}}" />
+
+  <view class="content" style="top: {{ bannerList.length == 0 ? (leftIconInfo.bottom + 10) * 2 : '436'}}rpx;">
+    
+    <view class="tabs" style="top: {{leftIconInfo.bottom + 10}}px;">
+      <view class="{{type === 1 ? 'select' : ''}} tab-item" bindtap="handleTabTap" data-index="{{1}}">限量抽</view>
+      <view class="separation"></view>
+      <view class="{{type === 2 ? 'select' : ''}} tab-item" bindtap="handleTabTap" data-index="{{2}}">参与的</view>
+    </view>
+    <view class="list" tt:if="{{dataPage.length > 0}}">
+      <CardCommodity item-class="{{index === dataPage.length - 1 ? 'last-item' : ''}}" bindtap="handleLotteryClick" tt:for="{{dataPage}}" data-item="{{item}}" id="{{item.id}}" item="{{item}}" title="{{item.title}}" imageUrl="{{item.image_url}}" detail="{{item.sell_desc}}" price="{{item.price}}" list_price="{{item.list_price}}" limit_num="{{item.limit_num}}" status="{{item.status}}" publish_time={{item.publish_time}} isMyParticipate="{{type == 2}}" page_name="lottery" />
+    </view>
+    <view class="not-data" tt:if="{{dataStatus === 'not-more-data'}}">暂无更多数据</view>
+    <view class="not-data" tt:if="{{dataStatus === 'loading'}}">Loading...</view>
+    <view class="not-data not-data-image" tt:if="{{dataStatus === 'not-data'}}">
+      <image src="{{OSS_URL}}/lottery-not-data.png"></image>
+      <text tt:if="{{type == 2}}">暂无参与的奖品，快去参与抽签活动吧~</text>
+      <text tt:if="{{type == 1}}">敬请期待，新活动即将上选！</text>
+    </view>
+  </view>
+</scroll-view>

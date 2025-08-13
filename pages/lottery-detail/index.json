@@ -1,0 +1,17 @@
+{
+    "usingComponents": {
+        "ModalLotteryRules": "/components/modal-lottery-rules/modal-lottery-rules",
+        "ModalLotteryTaskList": "/components/modal-lottery-task-list/modal-lottery-task-list",
+        "ModalLotteryJoin": "/components/modal-lottery-join/modal-lottery-join",
+        "ModalLotteryIntegralFull": "/components/modal-lottery-integral-full/modal-lottery-integral-full",
+        "ModalLotteryHelpSuccess": "/components/modal-lottery-help-success/modal-lottery-help-success",
+        "ModalLotteryInviteToHelpAndParticipate": "/components/modal-lottery-invite-to-help-and-participate/modal-lottery-invite-to-help-and-participate",
+        "ModalLotteryWinning": "/components/modal-lottery-winning/modal-lottery-winning",
+        "ModalLotteryNotWinning": "/components/modal-lottery-not-winning/modal-lottery-not-winning",
+        "ModalUserAgreement": "/components/modal-user-agreement/modal-user-agreement",
+        "ModelSmallEnvelopeAnimation": "/components/model-small-envelope-animation/model-small-envelope-animation",
+        "ModelBigEnvelopeAnimation": "/components/model-big-envelope-animation/model-big-envelope-animation"
+    },
+    "navigationBarTitleText": "尖货抽签",
+    "navigationStyle": "custom"
+}

@@ -1,0 +1,61 @@
+
+.occlusion-layer {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.default-content {
+    width: 590rpx;
+    background: linear-gradient( 227deg, rgba(90,20,202,0.16) 0%, rgba(255,255,255,0.25) 28%, rgba(255,255,255,0) 100%), #FFFFFF;
+    border-radius: 22rpx;
+    .title {
+        height: 53rpx;
+        font-weight: bold;
+        font-size: 38rpx;
+        color: #333333;
+        line-height: 53rpx;
+        text-align: center;
+        padding-top: 42rpx;
+    }
+    .text {
+        padding: 32rpx 50rpx 42rpx 50rpx;
+        width: 490rpx;
+        font-family: PingFang-SC, PingFang-SC;
+        font-weight: bold;
+        font-size: 22rpx;
+        color: #666666;
+        line-height: 30rpx;
+        text-align: justify;
+        font-style: normal;
+        .description {
+            width: 490rpx;
+            max-height: 651rpx;
+            font-weight: bold;
+            font-size: 22rpx;
+            color: #666666;
+            line-height: 30rpx;
+            text-align: justify;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+    }
+}
+
+.cancel {
+    text-align: center;
+    z-index: 99999;
+    image {
+        height: 81rpx;
+        width: 81rpx;
+    }
+}
+

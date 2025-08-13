@@ -1,0 +1,205 @@
+.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: #c1c7fa;
+}
+
+button {
+    background-color: transparent !important;
+    font-size: 26rpx;
+    color: #333;
+    position: absolute;
+    right: 20rpx;
+}
+
+button::after {
+    border: none !important;
+}
+
+.draw-scroll {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.my-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.not-data {
+    color: #333;
+    font-size: 24rpx;
+    text-align: center;
+    padding: 10rpx 0 50rpx;
+}
+
+.user-con {
+    /* padding-top: 60rpx; */
+    padding-top: 214rpx;
+
+}
+
+.user-section {
+    padding-top: 7rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    height: 213rpx;
+    position: relative;
+    width: 730rpx;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.avatar-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+}
+
+.avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin-left: 30rpx;
+    position: relative;
+}
+
+.avatar-icon {
+    width: 128rpx;
+    height: 128rpx;
+    position: absolute;
+    border: 2rpx solid #B8A8E9;
+    border-radius: 50%;
+    top: -21rpx;
+    background-color: #d8d8d8;
+}
+
+.getUser {
+    font-size: 22rpx;
+    position: absolute;
+    bottom: 60rpx;
+    left: 50%;
+    width: 128rpx;
+    text-align: center;
+    transform: translateX(-50%);
+    color: #333;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+}
+
+.username {
+    font-size: 32rpx;
+    color: #000;
+    font-weight: bold;
+}
+
+.user-id {
+    font-size: 26rpx;
+    color: #000;
+}
+
+.func-grid {
+    display: flex;
+    border-radius: 24rpx;
+    align-items: center;
+    width: 502rpx;
+    justify-content: space-between;
+    margin: 0 auto;
+    /* margin-left: 114rpx;
+    margin-right: 114rpx; */
+}
+
+.func-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180rpx;
+}
+
+.func-icon {
+    width: 93rpx;
+    height: 88rpx;
+    margin-bottom: 20rpx;
+}
+
+.func-tit {
+    font-size: 28rpx;
+    color: #333;
+    text-align: center;
+}
+
+.footlist {
+    background-color: transparent !important;
+}
+
+.noshop {
+    margin: 0 auto;
+    transform: scale(0.7);
+}
+
+.noshop-img {
+    display: block;
+    width: 500rpx;
+    height: 400rpx;
+    margin: 0 auto;
+}
+
+.noshop-tip-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.my_con_bg {
+    background: linear-gradient(180deg, #b9c0f9 0%, #D7D0F7 44%, #ced0fe 100%);
+}
+
+.line {
+    width: 2rpx;
+    height: 93rpx;
+    background: #CCCCCC;
+    box-shadow: inset 0rpx 0rpx 0rpx 0rpx #E0E0E0;
+    opacity: 0.4;
+}
+
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 176rpx;
+    background: rgba(156, 132, 219, 1);
+    /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05); */
+    opacity: 0;
+    transition: opacity 2s cubic-bezier(0.33, 1, 0.68, 1);
+    z-index: 999;
+}
+
+.cover-show {
+    opacity: 1;
+}
+
+.custom-icon {
+    position: fixed;
+    display: block;
+    width: 140px;
+    height: 30px;
+    z-index: 999;
+}

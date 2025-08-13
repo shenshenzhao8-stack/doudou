@@ -1,0 +1,43 @@
+<view class="custom-swiper-container">
+    <view class="custom-swiper-list" style="transform: translateX(-{{displayIndex * 100}}%); transition: {{isAnimating ? 'transform 0.4s cubic-bezier(0.7, 0, 0.3, 1)' : 'none'}};" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+        <!-- 头部假图 -->
+        <view class="custom-swiper-item" data-index="-1" data-item="{{productList[productList.length-1]}}">
+            <image class="swiper-img" src="{{productList[productList.length-1].image_url}}"></image>
+        </view>
+        <!-- 正常轮播内容 -->
+        <block tt:for="{{productList}}" tt:for-index="index" tt:for-item="item">
+            <view class="custom-swiper-item" data-index="{{index}}" data-item="{{item}}" bindtap="handleSwiper">
+                <view class="item-info slide-animate" tt:if="{{current === index}}">
+                    <text class="item-info-title {{source=='lottery-detail' ? 'lottery-detail-title' : ''}}">{{item.title}}</text>
+                    <view class="btn-box" tt:if="{{source !== 'lottery-detail'}}">
+                        <view class="buy-btn {{pulseBtn ? 'pulse-animate' : ''}}" tt:if="{{item.jump_type === 1}}">立刻购买</view>
+                        <view class="draw-lots-btn {{pulseBtn ? 'pulse-animate' : ''}}" tt:if="{{item.jump_type === 3}}">立即抽签</view>
+                    </view>
+                    <view class="draw-lots-btn pulse-animate" tt:if="{{source=='lottery-detail'}}">
+                        立即抽签
+                    </view>
+                </view>
+                <view class="item-info" tt:if="{{current !== index}}">
+                    <text class="item-info-title">{{item.title}}</text>
+                    <view class="btn-box" tt:if="{{source !== 'lottery-detail'}}">
+                        <view class="buy-btn" tt:if="{{item.jump_type === 1}}">立刻购买</view>
+                        <view class="draw-lots-btn" tt:if="{{item.jump_type === 3}}">立即抽签</view>
+                    </view>
+                    <view class="draw-lots-btn pulse-animate" tt:if="{{source=='lottery-detail'}}">
+                        立即抽签
+                    </view>
+                </view>
+                <image class="swiper-img" src="{{item.image_url}}"></image>
+            </view>
+        </block>
+        <!-- 尾部假图 -->
+        <view class="custom-swiper-item" data-index="{{productList.length}}" data-item="{{productList[0]}}">
+            <image class="swiper-img" src="{{productList[0].image_url}}"></image>
+        </view>
+    </view>
+    <view class="current-dot">
+        <block tt:for="{{productList}}" tt:for-index="index">
+            <view class="dot {{index==current?'dot-on':''}}"></view>
+        </block>
+    </view>
+</view>

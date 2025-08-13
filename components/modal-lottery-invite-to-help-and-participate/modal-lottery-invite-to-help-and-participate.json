@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Modal": "/components/modal/modal",
+    "ModalUserAgreement": "/components/modal-user-agreement/modal-user-agreement"
+  }
+}

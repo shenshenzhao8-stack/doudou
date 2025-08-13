@@ -1,0 +1,18 @@
+<view>
+  <Modal visible="{{visible}}" bind:cancel="handleCanel">
+    <view slot="content">
+      <view class="modal-lottery-title">恭喜好运签已集满</view>
+      <view class="modal-lottery-content">
+        <text>本场公布</text>
+        <text>{{detail.publish_time}}</text>
+        <text class="modal-lottery-content-description">你可在「我的-参与抽奖」查看抽签结果</text>
+      </view>
+    </view>
+    <view slot="footer">
+      <view class="modal-lottery-footer-time">开奖在即，祝你好运！</view>
+    </view>
+    <view slot="button">
+      <view class="modal-lottery-footer-button glossy-flow" bindtap="handleTap">开心收下</view>
+    </view>
+  </Modal>
+</view>

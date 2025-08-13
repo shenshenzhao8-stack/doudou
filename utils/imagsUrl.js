@@ -1,0 +1,1 @@
+export const ossImageUrl =  'https://volccdnauth.branddppartner.com/images'

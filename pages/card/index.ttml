@@ -1,0 +1,80 @@
+<scroll-view refresher-enabled scroll-y class="lottery" bindrefresherrefresh="onRefreshRefresh" refresher-triggered="{{isRefreshTriggered}}" bindscrolltolower="handleBindscrolltolower">
+    <view class="coupon-container" tt:if="{{couponList.length > 0}}">
+        <block tt:for="{{couponList}}" tt:key="id">
+            <!-- 卡券卡片 -->
+            <view class="coupon-card {{item.prize_info.prize_type ==1 || item.prize_info.prize_type ==3 ? 'coupon-card2': '' }}">
+                <!-- 优惠券 -->
+                <image src="/assets/card/sign-bg.png" tt:if="{{item.prize_info.prize_type === 2 }}" class="card-bg"></image>
+                <!-- 照片 自采 -->
+                <image src="/assets/card/movie-bg.png" tt:if="{{item.prize_info.prize_type === 3}}" class="card-bg"></image>
+                <!-- 电影票  招商礼品 -->
+                <image src="/assets/card/giftCards-bg.png" tt:if="{{item.prize_info.prize_type === 1}}" class="card-bg"></image>
+
+                <!-- 左侧区域内容 -->
+                <view class="card-left">
+                    <image src="/assets/card/sign.png" class="sign-icon" tt:if="{{item.prize_info.prize_type === 1}}"></image>
+                    <image src="/assets/card/movie.png" class="movie-icon" tt:if="{{item.prize_info.prize_type === 3}}"></image>
+                    <view tt:if="{{item.prize_info.prize_type === 2}}" class="amount-con">
+                        <view class="amount-num">{{item.prize_info.coupon_info.credit /100}} 元</view>
+                        <view class="amount-tips">{{item.prize_info.coupon_info.coupon_string}}</view>
+                    </view>
+                </view>
+
+                <!-- 右侧内容区域 -->
+                <view class="card-right">
+                    <block tt:if="{{item.prize_info.prize_type === 2}}">
+                        <view class="product-info">
+                            <view class="prize-name line-clamp-one">{{item.prize_info.coupon_info.coupon_name}}</view>
+                            <view class="shop2-name line-clamp-one">店铺名称：{{item.prize_info.store_name}}</view>
+                            <view class="shop2-name">有效期：{{item.prize_info.coupon_info.expire_time}}</view>
+                            <view class="shop2-name line-clamp-one">{{item.prize_info.coupon_info.what_coupon}}</view>
+                        </view>
+                    </block>
+                    <block tt:elif="{{item.prize_info.prize_type === 1}}">
+                        <view class="product-info">
+                            <view class="prize-name line-clamp-one">{{item.prize_info.prize_name}}</view>
+                            <view class="tips line-clamp-one">请于三个工作日内联系客服核销，逾期资格作废</view>
+                            <view class="shop-name line-clamp-one">店铺名称：{{item.prize_info.store_name}}</view>
+                            <view class="shop-time">卡签 ID：{{item.user_win_code}}</view>
+                            <view tt:if="{{!item.is_fill_address}}" class="shop-address line-clamp-one">请您补充地址点击<view bindtap="address" data-id="{{item.record_id}}" class="address">「补充地址」</view>
+                            </view>
+                        </view>
+                    </block>
+                    <block tt:else>
+                        <view class="product-info">
+                            <view class="prize3-name line-clamp-one">{{item.prize_info.prize_name}}</view>
+                            <view class="tips line-clamp-one">请于三个工作日内联系客服核销，逾期资格作废</view>
+                            <view class="shop-time3">卡签ID：{{item.user_win_code}}</view>
+                            <view tt:if="{{!item.is_fill_address}}" class="shop-time3 line-clamp-one">请您补充地址点击<view bindtap="address" data-id="{{item.record_id}}" class="address">「补充地址」</view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+
+                <block>
+                    <view class="id-section">
+                        <view tt:if="{{item.prize_info.prize_type === 1}}" class="copy-btn" bindtap="copyId" data-code="{{item.user_win_code}}" data-name="{{item.prize_info.prize_name}}"  data-storeId="{{item.prize_info.store_id}}" data-type="{{item.prize_info.prize_type}}">
+                            <view>复制 ID</view>
+                            <view>添加客服</view>
+                        </view>
+                        <view tt:if="{{item.prize_info.prize_type === 2}}" class="copy-btn" bindtap="copyId" data-couponId="{{item.prize_info.remote_prize_id}}" data-tit="{{item.prize_info.coupon_info.coupon_string}}" data-shopId="{{item.prize_info.store_id}}" data-type="{{item.prize_info.prize_type}}"> 前往领取</view>
+                        <view tt:if="{{item.prize_info.prize_type === 3}}" class="copy-btn" bindtap="copyId" data-code="{{item.user_win_code}}" data-type="{{item.prize_info.prize_type}}" data-name="{{item.prize_info.prize_name}}">
+                            <view>复制 ID</view>
+                            <view>添加小助理</view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </block>
+    </view>
+    <view class="not-data" tt:if="{{dataStatus === 'not-more-data'}}">暂无更多数据</view>
+    <view class="not-data" tt:elif="{{dataStatus === 'loading'}}">Loading...</view>
+    <view class="noshop" tt:if="{{dataStatus === 'not-data'}}">
+        <image class="noshop-img" src="../../assets/noshop.png"></image>
+        <text class="noshop-tip-title">快去首页点击浮层参与抽奖，获取礼品吧</text>
+    </view>
+
+</scroll-view>
+
+<!-- 弹窗 扫码添加小助理 -->
+<ModalCode isCode="{{showPopup}}" bind:cancel="handleCanelCode" />

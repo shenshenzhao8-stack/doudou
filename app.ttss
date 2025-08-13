@@ -1,0 +1,84 @@
+#app,
+page {
+  height: 100%;
+  width: 100%;
+  background: #f6f6f6
+}
+image {
+  vertical-align: bottom;
+}
+
+.line-clamp-one {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-two {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* 抖音美好体 */
+@font-face {
+  font-family: 'DOUYINSANSBOLD';
+  src: url('https://mini-app-test.tos-cn-beijing.volces.com/font/tiktok-beautiful-body.ttf');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 流光 */
+.glossy-flow {
+  position: relative;
+  overflow: hidden;
+}
+
+.glossy-flow::before {
+  content: "";
+  position: absolute;
+  width: 400%;
+  /* 扩大尺寸确保覆盖 */
+  height: 400%;
+  background: linear-gradient(45deg,
+      transparent 50%,
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 60%);
+  animation: glossy-flow 2s infinite linear;
+  transform: translate(50%, 50%) rotate(45deg);
+}
+
+/* 光泽流动动画 */
+@keyframes glossy-flow {
+  0% {
+    transform: translate(60%, 60%) rotate(90deg);
+    /* 从右下开始 */
+  }
+
+  20% {
+    transform: translate(40%, 40%) rotate(90deg);
+    /* 移动到左上 */
+  }
+
+  50% {
+    transform: translate(0%, 0%) rotate(90deg);
+    /* 移动到左上 */
+  }
+
+  80% {
+    transform: translate(-40%, -40%) rotate(90deg);
+    /* 移动到左上 */
+  }
+
+  100% {
+    transform: translate(-60%, -60%) rotate(90deg);
+    /* 移动到左上 */
+  }
+}

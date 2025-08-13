@@ -1,0 +1,8 @@
+<view class="tab-list">
+    <block tt:for="{{options}}" tt:key="id">
+        <view class="tab-item {{current === index ? 'tab-selected' : 'not-selected'}}" bindtap="handleTabbarClick" data-id="{{item.id}}" data-index="{{index}}">
+            <image tt:if="{{index===current}}" class="tab-icon" src="../../assets/hot-icon.png" />
+            <text class="tab-title">{{item.title}}</text>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,18 @@
+<view>
+  <Modal visible="{{visible}}" bind:cancel="handleCanel">
+    <view class="modal-lottery">
+      <image src="{{OSS_URL}}/modal-lottery-invite-to-help-and-participate.png" class="modal-lottery-image"></image>
+      <view class="modal-lottery-title">Lori 邀你助力</view>
+      <view class="modal-lottery-content">
+        <view class="image-box">
+          <image src="{{OSS_URL}}/menu-new-bg.png"></image>
+        </view>
+        <text>POPMART Labubu3.0前方高能系列
+          标题最多两行36个字</text>
+      </view>
+      <view class="modal-lottery-footer">
+        <button class="modal-lottery-footer-button" bindtap="handleTap">参与并助力</button>
+      </view>
+    </view>
+  </Modal>
+</view>

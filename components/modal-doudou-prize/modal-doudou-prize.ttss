@@ -1,0 +1,324 @@
+.modal-lottery {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: popupScale 0.5s;
+    width: 750rpx;
+    height: 499rpx;
+}
+
+.modal-lottery-win {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: popupScale 0.5s;
+    transform: translate(-50%, -50%);
+    width: 750rpx;
+    height: 747rpx;
+    margin-top: -50rpx;
+
+}
+
+.modal-lottery-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.modal-lottery-title {
+    font-family: "DOUYINSANSBOLD";
+    font-weight: normal;
+    font-size: 36rpx;
+    color: #000000;
+    line-height: 72rpx;
+    letter-spacing: 5rpx;
+    text-align: center;
+    font-style: normal;
+    position: absolute;
+    top: 24rpx;
+    left: 50%;
+    right: -50%;
+    transform: translateX(-50%);
+}
+
+.shop_con {
+    width: 390rpx;
+    position: absolute;
+    font-size: 29rpx;
+    top: 228rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: c;
+}
+
+.shop_name {
+    width: 280rpx;
+    font-family: DOUYINSANSBOLD;
+    font-weight: bold;
+    color: #8A72D6;
+    text-align: center;
+    position: relative;
+}
+.shop_text{
+    font-family: DOUYINSANSBOLD;
+    color: #8A72D6;
+}
+
+.modal-lottery-0-content {
+    position: absolute;
+    top: 302rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+}
+
+.modal-lottery-1-content {
+    position: absolute;
+    top: 350rpx;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: start;
+    z-index: 2;
+
+}
+
+.prize_icon {
+    font-family: DOUYINSANSBOLD;
+    font-weight: normal;
+    font-size: 43rpx;
+    color: #EB67CA;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+    margin-top: 30rpx;
+}
+
+.prize_nums {
+    font-family: DOUYINSANSBOLD;
+    font-weight: normal;
+    font-size: 139rpx;
+    color: #EB67CA;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+    display: flex;
+}
+.hundred_prize_nums{
+    font-family: DOUYINSANSBOLD;
+    font-weight: normal;
+    font-size: 95rpx;
+    color: #EB67CA;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+    display: flex;
+}
+.thousand_prize_nums {
+    font-family: DOUYINSANSBOLD;
+    font-weight: normal;
+    font-size: 95rpx;
+    color: #EB67CA;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+    display: flex;
+    margin-top: 20rpx;
+}
+
+.prize1_name {
+    width: 400rpx;
+    font-size: 56rpx;
+    color: #EB67CA;
+    font-family: DOUYINSANSBOLD;
+    font-weight: bold;
+    overflow: hidden;
+    text-align: center;
+}
+
+.prize_footer_title {
+    position: absolute;
+    top: 464rpx;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: start;
+    z-index: 2;
+    font-family: DOUYINSANSBOLD;
+    font-weight: normal;
+    font-size: 28rpx;
+    color: #d19bff;
+    line-height: 38rpx;
+    text-align: center;
+    font-style: normal;
+    text-transform: none;
+}
+
+.modal-lottery-content text:nth-child(1) {
+    font-family: "DOUYINSANSBOLD";
+    font-weight: normal;
+    font-size: 36rpx;
+    color: #000000;
+    letter-spacing: 2rpx;
+    text-align: center;
+    font-style: normal;
+}
+
+.modal-lottery-content text:nth-child(2) {
+    margin-top: 30rpx;
+    font-family: 'DOUYINSANSBOLD';
+    font-weight: normal;
+    font-size: 46rpx;
+    color: #000000;
+    letter-spacing: 3rpx;
+    text-align: center;
+    font-style: normal;
+}
+
+.modal-lottery-content text:nth-child(3) {
+    margin-top: 32rpx;
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 400;
+    font-size: 24rpx;
+    color: #000000;
+    letter-spacing: 1rpx;
+    text-align: center;
+    font-style: normal;
+}
+
+.modal-lottery-good-luck-lottery {
+    width: 240rpx;
+    height: 55rpx;
+    margin-bottom: 32rpx;
+    margin-top: 32rpx;
+}
+
+.modal-lottery-footer {
+    position: absolute;
+    bottom: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.modal-win-lottery-footer {
+    position: absolute;
+    bottom: 105rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+}
+.modal-win-lottery-card-footer{
+    position: absolute;
+    bottom: 70rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.addressCon {
+    position: absolute;
+    bottom: 60rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+    font-size: 26rpx;
+    width: 100%;
+    color: #7A41F8;
+    font-family: "DOUYINSANSBOLD";
+    padding: 0 20rpx;
+}
+.prize_tips{
+    position: absolute;
+    bottom: 10rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: DOUYINSANSBOLD;
+    font-weight: 400;
+    font-size: 18rpx;
+    color: #a585ff;
+    text-align: center;
+    margin-bottom: 20rpx;
+    z-index: 2;
+    width: 100%;
+}
+
+.addressTit {
+    border-bottom: 1rpx solid #7A41F8;
+}
+
+.modal-lottery-footer-time {
+    font-family: PingFangSC, PingFang SC;
+    font-weight: 400;
+    font-size: 28rpx;
+    color: #000000;
+    line-height: 40rpx;
+    letter-spacing: 2px;
+    text-align: center;
+    font-style: normal;
+    margin-bottom: 16rpx;
+}
+
+.modal-lottery-footer-button,
+.modal-copyId-footer-button,
+.modal-receive-footer-button {
+    width: 308rpx;
+    height: 79rpx;
+    text-align: center;
+    font-style: normal;
+}
+
+.modal-lottery-code-button {
+    width: 328rpx;
+    height: 79rpx;
+    text-align: center;
+    font-style: normal;
+}
+
+.cancel {
+    width: 81rpx;
+    height: 81rpx;
+    position: absolute;
+    bottom: -100rpx;
+    left: 50%;
+    transform: translate(-50%);
+}
+.close_icon{
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes popupScale {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}

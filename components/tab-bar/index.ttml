@@ -1,0 +1,11 @@
+<view class="container-small">
+    <view class="tabbar">
+        <view class="box">
+            <block tt:for="{{options}}">
+                <view class="tabbar-item {{current===index?'active':''}}" bindtap="handleTabbarClick" data-index="{{index}}">
+                    {{options[index]}}
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

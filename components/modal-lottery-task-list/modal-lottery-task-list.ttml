@@ -1,0 +1,111 @@
+<view class="popup-container" hidden="{{!internalVisible}}">
+  <!-- 蒙层 -->
+  <view class="mask" bindtap="closePopup" catch:touchmove="preventTouchMove"></view>
+  <!-- <view class="pay-attention-to-the-layer" tt:if="{{isPayAttentionToTheLayer}}" bindtap="closePayAttentionToTheLayer"></view> -->
+  <!-- 弹窗主体 -->
+  <!-- <view class="popup-content {{detail.favorite ? '' : 'not-favorite'}}"> -->
+  <view class="popup-content not-favorite">
+    <image src="{{OSS_URL}}/task.png" class="background" bindtap="handleCanelTap"></image>
+
+    <!-- 右上角外侧关闭按钮 -->
+    <view class="popup-close" bindtap="closePopup">
+      <image class="close-icon" src="{{OSS_URL}}/close-icon.png"></image>
+    </view>
+
+    <view class="progress-rate-content">
+      <view class="progress-rate-content-title">
+        做更多<text>任务</text> 提升<text>中签概率</text>
+      </view>
+
+      <!-- 任务进度 -->
+      <view class="task-tips">
+        <view class="progress-container">
+          <!-- TODO 概率计算 -->
+          <text class="progress-text">我的好运签（{{detail.has_draw_times}}/{{detail.total_draw_times}}）</text>
+          <text class="progress-value" tt:if="{{ 0 < detail.has_draw_times && detail.has_draw_times < 7}}">概率一般</text>
+          <text class="progress-value higher" tt:if="{{7 <= detail.has_draw_times && detail.has_draw_times < 15}}">概率较高</text>
+          <text class="progress-value very-high" tt:if="{{detail.has_draw_times >= 15}}">概率级高</text>
+        </view>
+        <view class="progress-bar">
+          <view class="progress-fill" style="width: {{(detail.has_draw_times / detail.total_draw_times) * 100}}%"></view>
+        </view>
+      </view>
+
+      <!-- 参与活动 -->
+      <view class="task-items">
+        <view class="task-info">
+          <text class="task-title">参与抽签活动（{{detail.signup.finish_task_times}}/{{detail.signup.max_task_times}}）</text>
+          <text class="task-desc">参与即送{{detail.signup.max_task_times}}张好运签</text>
+        </view>
+        <button open-type="openWebcastRoom" data-aweme-id="{{}}" class="task-status individuation-button {{ detail.signup.max_task_times === detail.signup.finish_task_times ? '' : 'not-follow-state' }}" data-type="signup" data-id="{{detail.signup.id}}" data-isTap="{{detail.signup.max_task_times === detail.signup.finish_task_times}}" bindopenwebcastroom="handleTaskTap">{{detail.signup.max_task_times === detail.signup.finish_task_times ? '已完成' : '去完成'}}</button>
+      </view>
+      <!-- 收藏小程序 -->
+      <!-- <view class="task-items" tt:if="{{detail.favorite}}">
+        <view class="task-info">
+          <text class="task-title">收藏添加小程序（{{detail.favorite.finish_task_times}}/{{detail.favorite.max_task_times}}) </text>
+          <text class="task-desc">收藏「抖音商城上新了」小程序可获得{{detail.favorite.max_task_times}}张好运签</text>
+        </view>
+        <button data-type="bar" bindtap="showFavoriteGuide" data-isTap="{{detail.favorite.max_task_times === detail.favorite.finish_task_times}}" class="task-status individuation-button {{detail.favorite.finish_task_times == detail.favorite.max_task_times ? '' : 'not-follow-state'}}">
+          {{detail.favorite.finish_task_times == detail.favorite.max_task_times ? '已完成' : '去完成'}}
+        </button>
+      </view> -->
+      <!-- 邀请好友 -->
+      <view class="task-items">
+        <view class="task-info">
+          <text class="task-title">邀请好友来助力（{{detail.share.finish_task_times}}/{{detail.share.max_task_times}}）</text>
+          <text class="task-desc">邀请1位好友可获得1张好运签</text>
+        </view>
+        <button bindtap="goShare" class="task-status individuation-button {{detail.share.finish_task_times === detail.share.max_task_times ? '' : 'not-follow-state'}}" open-type="share">
+          {{detail.share.finish_task_times === detail.share.max_task_times ? '已完成' : '去完成'}}
+        </button>
+      </view>
+      <!-- 热门 -->
+      <view class="task-hot-items">
+        <view class="title">
+          <view class="task-info">
+            <text class="task-title">浏览商品({{detail.tapTask.finish_task}}/{{detail.tapTask.max_task}})</text>
+            <text class="task-desc">浏览1个商品可获得1张好运签</text>
+          </view>
+          <view bindtap="handleProdTap" class="task-action {{detail.tapTask.tapTaskHotStatus ? '' : 'not-follow-state'}}">{{detail.tapTask.tapTaskHotStatus ? '已完成' : '去完成'}}</view>
+        </view>
+        <view class="product">
+          <view class="item" tt:for="{{detail.top}}" tt:key="{{item.id}}" bindtap="handleTaskTap" data-id="{{item.id}}" data-type="top" data-isTap="{{item.finish_task_times == item.max_task_times}}" data-businessId="{{item.third_id}}" data-title="{{item.title}}">
+            <image class="product-img" src="{{item.image_url}}"></image>
+            <view class="product-status" style="background: {{item.finish_task_times == item.max_task_times ? 
+                      'linear-gradient( 316deg, #9E9E9E 0%, #C9C9C9 100%)' : 
+                      'linear-gradient( 316deg, #9274D9 0%, #8D66E7 45%, #B698EC 100%)'}}">
+              {{item.finish_task_times == item.max_task_times ? '已浏览' : '未浏览'}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 直播间 -->
+      <view class="task-items">
+        <view class="task-info">
+          <text class="task-title">浏览人气主页（{{detail.live.finish_task_times}}/{{detail.live.max_task_times}})</text>
+          <text class="task-desc">浏览主页可获得{{detail.live.max_task_times}}张好运签</text>
+        </view>
+        <!-- <button open-type="{{ isLive ? 'openWebcastRoom' : 'openAwemeUserProfile'}}" data-aweme-id="{{detail.live.third_id}}" class="task-status individuation-button {{ detail.live.max_task_times === detail.live.finish_task_times ? '' : 'not-follow-state' }}" data-type="live" data-id="{{detail.live.id}}" data-isTap="{{detail.live.max_task_times === detail.live.finish_task_times}}" bindopenwebcastroom="handleTaskLiveTap" bindopenawemeuserprofile="handleTaskLiveTap">{{detail.live.max_task_times === detail.live.finish_task_times ? '已完成' : '去完成'}}</button> -->
+
+        <view class="task-status individuation-button live-button {{ detail.live.max_task_times === detail.live.finish_task_times ? '' : 'not-follow-state' }}" bindtap="handleTaskLiveTap" data-type="live" data-businessId="{{detail.live.third_id}}" data-id="{{detail.live.id}}" data-isTap="{{detail.live.max_task_times === detail.live.finish_task_times}}">
+          {{detail.live.max_task_times === detail.live.finish_task_times ? '已完成' : '去完成'}}
+          <!-- <aweme-data aweme-id="{{detail.live.third_id}}" type="avatar" bindtap="handleTaskLiveTap" data-type="live" data-id="{{detail.live.id}}" data-isTap="{{detail.live.max_task_times === detail.live.finish_task_times}}" class="live-aweme-data" binderror="handleAwemeError" /> -->
+        </view>
+      </view>
+
+      <!-- 店铺 -->
+      <view class="task-items">
+        <view class="task-info">
+          <text class="task-title">浏览店铺（{{detail.detail.finish_task_times}}/{{detail.detail.max_task_times}}）</text>
+          <text class="task-desc">浏览店铺可获得{{detail.detail.max_task_times}}张好运签</text>
+        </view>
+        <button class="task-status individuation-button {{ detail.detail.max_task_times === detail.detail.finish_task_times ? '' : 'not-follow-state' }}" data-type="detail" data-id="{{detail.detail.id}}" data-isTap="{{detail.detail.max_task_times === detail.detail.finish_task_times}}" bindtap="handleTaskTap" data-businessId="{{detail.detail.third_id}}">{{detail.detail.max_task_times === detail.detail.finish_task_times ? '已完成' : '去完成'}}</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="live-broadcast-jump-button">
+  <live-preview awemeId="202080446" id="myLivePlayer" binderror="onPreviewError" hideHeader="{{false}}" bindUserPage="onPreviewUserPage" bindLiveRoom="onPreviewLiveRoom" bindLiveStatus="onPreviewLiveStatus" >
+  </live-preview>
+</view> -->

@@ -1,0 +1,62 @@
+.occlusion-layer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.content {
+  padding: 20rpx;
+  width: 100%;
+  height: 320rpx;
+  background-color: #fff;
+  border-radius: 22rpx 22rpx 0 0;
+}
+
+.title {
+  color: #000;
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.rule {
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  width: 100%;
+  text-align: center;
+}
+
+.rule text {
+  color: #2479FF;
+}
+
+.content button {
+  margin-top: 30rpx;
+  background-color: #FE2B54;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.content .cancel {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  height: 40rpx;
+}
+
+.cancel-image {
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;
+  right: 0;
+}

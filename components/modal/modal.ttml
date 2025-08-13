@@ -1,0 +1,17 @@
+<view class="occlusion-layer" tt:if="{{internalVisible}}" catchtap="handleTap">
+    <view class="content" catchtap="noop">
+        <slot>
+            <view class="default-content">
+                <view class="title">尖货抽签规则说明</view>
+                <view class="text">
+                   <text class="description">
+                    简单的提示                                 
+                   </text>
+                </view>
+            </view>
+        </slot>
+        <view class="cancel">
+            <image src="{{OSS_URL}}/cancel.png" bindtap="handleTap"></image>
+        </view>
+    </view>
+</view>

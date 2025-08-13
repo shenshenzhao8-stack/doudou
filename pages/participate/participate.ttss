@@ -1,0 +1,60 @@
+/* /Users/liyong/Desktop/work/frontend-doudou-mini/components/card-commodity/card-commodity.ttss */
+.lottery {
+    width: 100%;
+    overflow: hidden;
+    background-color: #F6F6F6;
+}
+
+.participants {
+    margin: 0 auto;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+}
+
+.list {
+    height: 280rpx;
+    display: flex;
+    width: 730rpx;
+    margin-bottom: 68rpx;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 20rpx;
+    padding: 20rpx 0;
+}
+
+.list-data {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.not-data {
+    font-size: 25rpx;
+    text-align: center;
+    padding: 10rpx 0 50rpx;
+    padding-top: 174rpx;
+
+    image {
+        width: 250rpx;
+        height: 200rpx;
+    }
+}
+
+.noshop {
+    margin: 0 auto;
+    transform: scale(0.7);
+}
+
+.noshop-img {
+    display: block;
+    width: 500rpx;
+    height: 400rpx;
+    margin: 0 auto;
+}
+
+.noshop-tip-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 24rpx;
+    color: #333;
+}

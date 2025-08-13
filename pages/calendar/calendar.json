@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "banner": "/components/banner/index",
+        "waterfall-newReleases": "/components/waterfall-newReleases/index"
+        
+    },
+    "navigationBarTitleText": "上新日历",
+    "navigationStyle": "custom"
+}

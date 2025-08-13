@@ -1,0 +1,67 @@
+.address-container {
+    background-color: #f2f2f2;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.address-view {
+    width: 100%;
+    /* max-height: 150rpx; */
+    /* z-index: 99; */
+    padding-bottom: 20rpx;
+}
+
+.action-btn {
+    display: inline-table;
+    height: 42px;
+    background: linear-gradient(270deg, #8967D9 0%, #987ADB 38%, #BB97FA 100%);
+    border-radius: 5px;
+    font-family: SourceHanSansCNVF, SourceHanSansCNVF;
+    font-weight: bold;
+    font-size: 21px;
+    color: #FFFFFF;
+    line-height: 42px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-style: normal;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    right: -50%;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    padding: 0rpx 80rpx;
+}
+
+.action-set {
+    color: #1989fa;
+    font-weight: 500;
+}
+
+.action-edit {
+    color: #1989fa;
+}
+
+.add-btn {
+    padding: 24rpx;
+    background-color: #fff;
+    border-top: 1rpx solid #eaeaea;
+}
+
+.add-address-btn {
+    background-color: #1989fa;
+    color: white;
+    font-size: 32rpx;
+    border-radius: 48rpx;
+    line-height: 1.8;
+}
+
+.addressBg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}

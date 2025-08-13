@@ -1,0 +1,107 @@
+.modal-lottery {
+  position: relative;
+  width: 574rpx;
+  height: 678rpx;
+}
+
+.modal-lottery-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.modal-lottery-title {
+  font-family: "DOUYINSANSBOLD";
+  font-weight: normal;
+  font-size: 36rpx;
+  color: #000000;
+  line-height: 72rpx;
+  letter-spacing: 5rpx;
+  text-align: center;
+  font-style: normal;
+  position: absolute;
+  top: 24rpx;
+  left: 50%;
+  right: -50%;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.modal-lottery-content {
+  position: absolute;
+  top: 155rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-lottery-content text:nth-child(1) {
+  font-family: "DOUYINSANSBOLD";
+  font-weight: normal;
+  font-size: 36rpx;
+  color: #000000;
+  letter-spacing: 2rpx;
+  text-align: center;
+  font-style: normal;
+}
+
+.modal-lottery-content text:nth-child(2) {
+  margin-top: 30rpx;
+  font-family: 'DOUYINSANSBOLD';
+  font-weight: normal;
+  font-size: 46rpx;
+  color: #000000;
+  letter-spacing: 3rpx;
+  text-align: center;
+  font-style: normal;
+}
+
+.modal-lottery-content text:nth-child(3) {
+  margin-top: 32rpx;
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #000000;
+  letter-spacing: 1rpx;
+  text-align: center;
+  font-style: normal;
+}
+
+.modal-lottery-good-luck-lottery {
+  width: 240rpx;
+  height: 55rpx;
+  margin-bottom: 32rpx;
+  margin-top: 32rpx;
+}
+
+.modal-lottery-footer-time {
+  margin-top: 64rpx;
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #000000;
+  line-height: 40rpx;
+  letter-spacing: 2px;
+  text-align: center;
+  font-style: normal;
+  margin-bottom: 16rpx;
+}
+
+.modal-lottery-footer-button {
+  width: 350rpx;
+  height: 84rpx;
+  background: linear-gradient(316deg, #9274D9 0%, #8D66E7 45%, #B698EC 100%);
+  border-radius: 12rpx;
+  font-family: 'DOUYINSANSBOLD';
+  font-weight: normal;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 84rpx;
+  letter-spacing: 2px;
+  text-align: center;
+  font-style: normal;
+}

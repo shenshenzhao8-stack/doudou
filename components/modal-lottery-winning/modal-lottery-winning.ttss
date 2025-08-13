@@ -1,0 +1,151 @@
+.modal-lottery-title {
+  font-family: "DOUYINSANSBOLD";
+  font-weight: normal;
+  font-size: 36rpx;
+  color: #A600FF;
+  letter-spacing: 5rpx;
+  text-align: center;
+  font-style: normal;
+  position: absolute;
+  top: 35rpx;
+  left: 50%;
+  right: -50%;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.modal-lottery-content {
+  position: absolute;
+  top: 131rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-lottery-content text:nth-child(1) {
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #000000;
+  letter-spacing: 1px;
+  text-align: center;
+  font-style: normal;
+}
+
+.modal-lottery-content .image-box {
+  width: 240rpx;
+  height: 240rpx;
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.modal-lottery-content .image-box image {
+  width: 240rpx;
+  height: 240rpx;
+}
+
+.modal-lottery-content-description {
+  font-family: PingFangSC, PingFang SC;
+  width: 430prx;
+  height: 66rpx;
+  font-family: PingFang-SC, PingFang-SC;
+  font-weight: 500;
+  font-size: 24rpx;
+  color: #000000;
+  line-height: 33rpx;
+  letter-spacing: 1px;
+  text-align: center;
+  font-style: normal;
+}
+
+.modal-lottery-footer {
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  padding-bottom: 24rpx;
+  box-sizing: border-box;
+}
+
+.modal-lottery-footer .id {
+  height: 40rpx;
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #000000;
+  line-height: 40rpx;
+  letter-spacing: 2rpx;
+  text-align: center;
+  font-style: normal;
+}
+
+.modal-lottery-footer .id text {
+  font-weight: 900;
+}
+
+.modal-lottery-footer-button {
+  width: 350rpx;
+  height: 84rpx;
+  background: linear-gradient(316deg, #9274D9 0%, #8D66E7 45%, #B698EC 100%);
+  border-radius: 12rpx;
+  font-family: 'DOUYINSANSBOLD';
+  font-weight: normal;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 84rpx;
+  letter-spacing: 2px;
+  text-align: center;
+  font-style: normal;
+  margin-bottom: 68rpx;
+  margin-top: 16rpx;
+}
+
+.modal-lottery-footer-info {
+  width: 526rpx;
+  height: 28rpx;
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #0000007d;
+  line-height: 28rpx;
+  letter-spacing: 1rpx;
+  text-align: center;
+  font-style: normal;
+}
+
+.caidai {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  opacity: 0;
+  animation: fade-sequence 1.5s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fade-sequence {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+    z-index: 99;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}

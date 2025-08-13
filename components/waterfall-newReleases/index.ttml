@@ -1,0 +1,65 @@
+<!-- 首发上新 -->
+<view class="{{bg=='my-waterfall-bg' ? 'my-bg':''}} footlist">
+    <view class="foot-left">
+        <view class="ad-shop" tt:if="{{ads.length !==0 }}">
+            <!-- <live-preview tt:if="{{liveStatus!=='offline' && ads[0].jump_type===4}}" class="live" hide-header="{{hideHeader}}" awemeId="{{ads[0].live_id}}" binderror="onPreviewError" hideHeader="{{hideHeader}}" bindUserPage="onPreviewUserPage" bindLiveRoom="onPreviewLiveRoom" bindLiveStatus="onPreviewLiveStatus"></live-preview> -->
+            <image  class="ad-cover-image" src="{{ads[0].image_url}}" bindtap="handleAd" data-item="{{ads[0]}}"></image>
+            <!-- <button tt:if="{{ads[0].jump_type===4}}" class="ad-cover-live-image" open-type="openWebcastRoom" bindopenwebcastroom="eventHandler" data-aweme-id="{{ads[0].live_id}}">
+            </button> -->
+        </view>
+
+        <block tt:for="{{leftList}}" tt:key="{{item.id}}">
+            <view class='footbox' id="waterfall-item-{{item.product_id}}" bindtap='jumpDetail' data-type="{{ads[0].jump_type}}" data-id="{{item.product_id}}"  data-cover="{{item.banner}}" data-title="{{item.title}}">
+                <view class="week-new-tag" tt:if="{{item.tag}}">
+                    <image class="new-tag-icon" src=".././../assets/new-tag-icon.png"></image>
+                    {{item.tag}}
+                </view>
+                <image class='shop-img' src="{{item.imageUrl}}" mode="widthFix" lazy-load></image>
+                <view class="info-box">
+                    <view class="line-one">
+                        <text class="title">{{item.title}}</text>
+                    </view>
+                    <view class="line-two">
+                        <text class="tag">{{item.sell_point}}</text>
+                        <!-- <text class="title">{{item.description}}</text> -->
+                    </view>
+                    <view class="line-three">
+                        <view class="price-box">
+                            <text class="symbol">¥</text>
+                            <view class="price">{{item.priceArr[0]}}<text tt:if="{{item.priceArr[1]}}" class="price-fen">{{'.'+item.priceArr[1]}}</text>
+                            </view>
+                        </view>
+                        <text class="sold">已售{{item.sellNumStr}}</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="foot-right">
+        <block tt:for="{{rightList}}" tt:key="{{item.id}}">
+            <view class='footbox' id="waterfall-item-{{item.product_id}}" catchtap='jumpDetail' data-type="{{ads[0].jump_type}}"   data-id="{{item.product_id}}" data-cover="{{item.banner}}" data-title="{{item.title}}">
+                <view class="week-new-tag" tt:if="{{item.tag}}">
+                    <image class="new-tag-icon" src=".././../assets/new-tag-icon.png"></image>
+                    {{item.tag}}
+                </view>
+                <image class='shop-img' src="{{item.imageUrl}}" mode="widthFix" lazy-load></image>
+                <view class="info-box">
+                    <view class="line-one">
+                        <text class="title">{{item.title}}</text>
+                    </view>
+                    <view class="line-two">
+                        <text class="tag">{{item.sell_point}}</text>
+                    </view>
+                    <view class="line-three">
+                        <view class="price-box">
+                            <text class="symbol">¥</text>
+                            <view class="price">{{item.priceArr[0]}}<text tt:if="{{item.priceArr[1]}}" class="price-fen">{{'.'+item.priceArr[1]}}</text>
+                            </view>
+                        </view>
+                        <text class="sold">已售{{item.sellNumStr}}</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,140 @@
+<scroll-view class="lottery-detail" scroll-y="{{isScrollY}}" bindscroll="handleBindscroll">
+
+  <view tt:if="isLoad" class="page-left-title {{coverShow ? 'cover-show-page-left-title' : ''}}" style="left:{{leftIconInfo.width+13}}px; top:{{leftIconInfo.top}}px; line-height: {{leftIconInfo.height}}px;">尖货抽签</view>
+
+  <view class="cover {{coverShow ? 'cover-show' : ''}}" style="height: {{leftIconInfo.bottom + 10}}px;"></view>
+  
+
+  <view class="detail-image">
+    <image src="{{detail.image.product_image}}" />
+    <view class="participate" tt:if="{{item.signup_num > 10}}">
+      <text>{{detail.signup_num}}人正在参与！</text>
+    </view>
+    <view class="rules" bindtap="handleRulesTap">
+      规则说明
+    </view>
+    <view class="title line-clamp-two">
+      {{detail.title}}
+    </view>
+    <view class="lottery-detail-num">
+      <view class="price">
+        <text class="discount">¥ {{detail.list_price}}</text>
+        <text class="actual-price" tt:if="{{detail.listPriceGreaterThanPrice}}">¥ {{detail.price}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="limit-quantity">限{{detail.limit_num}}件</view>
+    </view>
+    <view class="lottery-button-position">
+      <view class="lottery-button draw-now-button enlarge glossy-flow" tt:if="{{lotteryStatus === 'not-involved'}}" bindtap="handleModelTop">
+        立即抽签
+      </view>
+      <view class="lottery-button increase-the-probability enlarge glossy-flow" tt:if="{{detail.has_draw_times < detail.total_draw_times && lotteryStatus === 'in-progress' }}" bindtap="handleModelTop">
+        继续获签，冲顶最高概率
+      </view>
+      <view class="lottery-button in-progress" tt:if="{{lotteryStatus === 'in-progress' && detail.has_draw_times == detail.total_draw_times}}">
+        静待开奖
+      </view>
+      <view class="lottery-button is-lottery enlarge glossy-flow" tt:if="{{lotteryStatus === 'is-lottery'}}" bindtap="handleModelTop">
+        立即查看
+      </view>
+
+      <view class="lottery-button is-lottery enlarge glossy-flow" tt:if="{{lotteryStatus === 'other'}}" bindtap="handleModelTop">
+        去看看别的尖货
+      </view>
+    </view>
+  </view>
+  <view class="lottery-centent">
+    <view class="progress">
+      <view class="progress-item">
+        <text>开始抽签</text>
+        <text class="{{time.current_time > time._start_time && time.current_time < time._publish_time ? 'finish' : ''}} {{time.current_time > time._publish_time ? 'white-spot' : ''}}"></text>
+        <text>{{detail.start_time}}</text>
+      </view>
+      <view class="progress-line one"></view>
+      <view class="progress-item">
+        <text>公布结果</text>
+        <text class="{{time.current_time >= time._publish_time && time.current_time < time._end_time ? 'finish' : ''}} {{time.current_time > time._end_time ? 'white-spot' : ''}}"></text>
+        <text>{{detail.publish_time}}</text>
+      </view>
+      <view class="progress-line two"></view>
+      <view class="progress-item">
+        <text>截止购买</text>
+        <text class="{{time.current_time > time._end_time ? 'finish' : ''}}"></text>
+        <text>{{detail.end_time}}</text>
+      </view>
+    </view>
+
+    <view class="separation" tt:if="{{lotteryStatus != 'not-involved' && lotteryStatus != 'is-lottery' && lotteryStatus !== 'in-progress' }}"></view>
+    <view class="number-of-winning-tickets" tt:if="{{lotteryStatus == 'in-progress'}}">
+      <view class="number-of-winning-tickets-show">
+        我拥有的抽签码数量 {{detail.has_draw_times}}
+      </view>
+      <view class="number-of-winning-tickets-button-warn" bindtap="switchChange">
+        <text>中签提醒</text>
+        <view class="switch-space {{isWinningReminder ? 'on' : 'off'}}">
+          <view class="round"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="separation" tt:if="{{detail.draw_winner.length}}"></view>
+    <view class="draw-winner" tt:if="{{detail.draw_winner.length}}">
+      <view class="title">恭喜以下用户中签</view>
+      <text tt:for="{{detail.draw_winner}}" class="name">{{item}}</text>
+    </view>
+
+    <view class="product-details">
+      <view class="product-details-title">商品详情</view>
+      <image tt:for="{{detail.image.desc_image}}" src="{{item}}" class="details-image" mode="widthFix" lazy-load="true"></image>
+      <view class="error-not-data" tt:if="{{detail.image.desc_image.length == 0}}">
+        <image src="{{OSS_URL}}/error-not-data.png" ></image>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 操作弹出框 -->
+<!-- <button bindtap="handleTaskListTop">任务列表</button>
+<button bindtap="handleJoinTap">参与任务送您好运签</button>
+<button bindtap="handleIntegralFullTop">恭喜好运签已集满</button>
+<button bindtap="handleHelpSuccessTop">助力成功</button>
+<button bindtap="handleInviteToHelpAndParticipateTop">Xxx 邀请助力并参与</button>
+<button bindtap="handleWinningTap">恭喜你中签啦</button>
+<button bindtap="handleTaskListTop">任务列表</button>
+<button bindtap="handleNotWinningTap">本场召唤失败</button>
+<button bindtap="handleUserAgreementTap">用户协议授权</button>
+<button bindtap="handleResetTap">重置用户信息</button>
+<button bindtap="handleSmallAnimationTap">打开小动画弹出框</button>
+<button bindtap="handleBigAnimationTap">打开大动画弹出框</button>
+<button bindtap="handleCopyTap">粘贴</button>  -->
+
+<!-- 规则 -->
+<ModalLotteryRules visible="{{modalLotteryRulesVisible}}" bind:cancel="handleCanel" />
+
+<!-- 任务列表 -->
+<ModalLotteryTaskList visible="{{modalLotteryTaskListVisible}}" bind:cancel="handleCanel" detail="{{detail}}" shareInfo="{{shareInfo}}" bind:handleTap="getRefreshData" />
+
+<!-- 参加任务 -->
+<ModalLotteryJoin visible="{{modalLotteryJoinVisible}}" bind:clicktap="handleTaskListTop" bind:cancel="handleCanel" detail="{{detail}}" shareInfo="{{shareInfo}}" />
+
+<!-- 恭喜好运签已集满 -->
+<ModalLotteryIntegralFull visible="{{modalLotteryIntegralFullVisible}}" bind:cancel="handleCanel" bind:handleTap="handleCanel" detail="{{detail}}" />
+
+<!-- 助力成功 -->
+<ModalLotteryHelpSuccess visible="{{modalLotteryHelpSuccessVisible}}" bind:cancel="handleCanel" bind:handleTap="handleTaskListTop" detail="{{detail}}" shareInfo="{{shareInfo}}" />
+
+<!-- Xxx 邀请助力并参与 -->
+<ModalLotteryInviteToHelpAndParticipate visible="{{modalLotteryInviteToHelpAndParticipateVisible}}" bind:cancel="handleCanel" bind:handleTap="handleInviteToHelpAndParticipateTap" shareInfo="{{shareInfo}}" detail="{{detail}}" userInfo="{{userInfo}}" />
+
+<!-- 恭喜你中签啦 -->
+<ModalLotteryWinning visible="{{modalLotteryWinningVisible}}" bind:cancel="handleCanel" id="{{id}}" detail="{{detail}}" />
+
+<!-- 本场召唤失败 -->
+<ModalLotteryNotWinning visible="{{modalLotteryNotWinningVisible}}" bind:cancel="handleCanel" detail="{{detail}}" bind:handleTap="handleRouterTap" />
+
+<!-- 用户协议授权 -->
+<ModalUserAgreement visible="{{modalUserAgreementVisible}}" bind:handleTap="handleModalUserAgreementTap" bind:cancel="handleCanel" pageName="lottery" detail="{{detail}}" isPrivacyPolicy="{{true}}" />
+
+<!-- 动画 -->
+<ModelSmallEnvelopeAnimation visible="{{modelSmallEnvelopeAnimationVisible}}" bind:cancel="handleCanel" />
+<ModelBigEnvelopeAnimation visible="{{modelBigEnvelopeAnimationVisible}}" bind:cancel="handleCanel" />

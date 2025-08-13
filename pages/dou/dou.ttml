@@ -1,0 +1,30 @@
+<view class="container">
+    <view class="dou_tips">
+        <image src="/assets/doudou/notice_icon.png" class="notice_icon"></image>
+        <view class="notice_tit">富士拍立得mini12、会唱歌的冰箱贴等惊喜好物</view>
+    </view>
+    <!-- 活动规则 、控制音频 -->
+    <image bindtap="showRulePopup" class="game_rules" src="/assets/doudou/rules.png"></image>
+    <image bindtap="tapMuted" tt:if="{{!isMuted}}" class="video_muted" src="/assets/doudou/open_muted.png"></image>
+    <image bindtap="tapMuted" tt:if="{{isMuted}}" class="video_muted" src="/assets/doudou/close_muted.png"></image>
+    <!-- 视频区域 -->
+    <video style="z-index: {{videoZindex}}; opacity: {{video0pacity}};" id="lotteryVideo0" bindtimeupdate="bindtimeupdate" controls="{{false}}" muted="{{isMuted}}" src="{{downloadedAnimations.prize0}}" object-fit="cover" autoplay="{{autoPlay}}" loop="{{videoLoop}}" bindended="videoEnded"></video>
+    <video style="z-index: {{videoZindex}}; opacity: {{video1pacity}};" id="lotteryVideo1" bindtimeupdate="bindtimeupdate" controls="{{false}}" muted="{{isMuted}}" src="{{downloadedAnimations.prize1}}" object-fit="cover" autoplay="{{autoPlay}}" loop="{{videoLoop}}" bindended="videoEnded"></video>
+
+    <!-- 静态图 抽奖按钮 -->
+    <view class="poster_gif_view" style="z-index: {{zindex}}">
+        <image class="poster_gif" src="{{downloadedAnimations.prize4 ? downloadedAnimations.prize4 : '/assets/doudou/dou_bg.jpg'}}"></image>
+        <view style="bottom: {{buttonBottom}}" class="lottery-btn" bindtap="startLottery" disabled="{{isDrawing}}"></view>
+    </view>
+    <!-- 抽奖次数 -->
+    <view class="drawTit">剩余抽奖次数：{{drawNums}}</view>
+
+    <!-- 中奖组件 -->
+    <ModalDoudouPrize visible="{{showPrizePopup}}" bind:cancel="handleCanel" prize_obj="{{prizeObj}}" is_win="{{isWin}}" is_win_type="{{activeVideoType}}" />
+
+    <!-- 活动规则弹窗 -->
+    <ModalDoudouRule isShowRule="{{showRulePopup}}" bind:cancel="closeRulePopup" />
+
+    <!-- 用户协议授权 -->
+    <ModalUserAgreement visible="{{modalUserAgreementVisible}}" pageName="doudou_activites" bind:handleTap="handleModalUserAgreementTap" bind:cancel="handleCanelAgreementModal" isPrivacyPolicy="{{true}}" />
+</view>

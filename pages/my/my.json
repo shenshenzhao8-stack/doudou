@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "drawlostlist" :"/components/drawLostList/index",
+        "waterfall-newReleases" : "/components/waterfall-newReleases/index",
+        "ModalUserAgreement": "/components/modal-user-agreement/modal-user-agreement"
+    },
+    "navigationBarTitleText": "我的",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true
+}

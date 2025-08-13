@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Modal": "/components/model-big-envelope-animation/model-big-envelope-animation"
+  }
+}

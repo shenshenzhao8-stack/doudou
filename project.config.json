@@ -1,0 +1,16 @@
+{
+    "setting": {
+        "urlCheck": true,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "newFeature": true,
+        "autoCompile": true,
+        "compileHotReLoad": true,
+        "nativeCompile": true,
+        "previewPreload": true
+    },
+    "appid": "tte56493d97a6cd21701",
+    "projectname": "兜兜小程序",
+    "douyinProjectType": "native"
+}

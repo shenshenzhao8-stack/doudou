@@ -1,0 +1,37 @@
+<view class='footlist'>
+    <view class="foot-left">
+        <block tt:for="{{list}}" tt:key="{{ item.id }}">
+            <view class='footbox' catchtap='jumpdetail' id="{{item.id}}" wx:if="{{index%2==0}}" data-cover="{{item.banner}}" data-title="{{item.title}}">
+                <image class='cover {{item.showLivePreview ? "hidden" : ""}}' src="{{item.banner}}" mode="widthFix" lazy-load></image>
+                <live-preview class="live {{!item.showLivePreview ? "hidden" : ""}}" hide-header="{{hideHeader}}" awemeId="iambaby54" binderror="onPreviewError" hideHeader="{{hideHeader}}" bindUserPage="onPreviewUserPage" bindLiveRoom="onPreviewLiveRoom" bindLiveStatus="onPreviewLiveStatus"></live-preview>
+                <view class="info-box">
+                    <text class="title">{{item.liveInfo.title}}</text>
+                    <view class="user-info">
+                        <image class="avatar" src="{{item.liveInfo.avatar}}"></image>
+                        <view class="user-info-right">
+                            <text class="username">{{item.liveInfo.userName}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <view class="foot-right">
+        <block tt:for="{{list}}">
+            <view class='footbox' catchtap='jumpdetail' catchlongtap="deletefoot" bindtouchend="touchend" id="{{item.id}}" tt:if="{{index%2==1}}" data-cover="{{item.banner}}" data-title="{{item.title}}">
+                <image class='cover {{item.showLivePreview ? "hidden" : ""}}' src="{{item.banner}}" mode="widthFix" lazy-load></image>
+                <live-preview class="live {{!item.showLivePreview ? "hidden" : ""}}" hide-header="{{hideHeader}}" awemeId="1178956297" binderror="onPreviewError" hideHeader="{{hideHeader}}" bindUserPage="onPreviewUserPage" bindLiveRoom="onPreviewLiveRoom" bindLiveStatus="onPreviewLiveStatus"></live-preview>
+                <view class="info-box">
+                    <text class="title">{{item.liveInfo.title}}</text>
+                    <view class="user-info">
+                        <image class="avatar" src="{{item.liveInfo.avatar}}"></image>
+                        <view class="user-info-right">
+                            <text class="username">{{item.liveInfo.userName}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

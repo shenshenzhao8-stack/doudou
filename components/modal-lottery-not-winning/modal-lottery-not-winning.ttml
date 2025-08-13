@@ -1,0 +1,23 @@
+<view>
+  <Modal visible="{{visible}}" bind:cancel="handleCanel">
+    <view slot="content">
+      <view class="modal-lottery-title">本场召唤失败</view>
+      <view class="modal-lottery-content">
+        <text>祝你下次好运，锦鲤附体！</text>
+        <view class="image-box">
+          <image src="{{detail.image_url}}"></image>
+        </view>
+        <view class="description line-clamp-two">
+          {{detail.title}}
+        </view>
+      </view>
+    </view>
+    <view  slot="footer" class="modal-lottery-footer">
+      <view class="modal-lottery-footer-description">
+        搜“抖音商城上新了”，每天尖货抽签
+      </view>
+
+      <button class="modal-lottery-footer-button" bindtap="handleTap">去看看别的尖货</button>
+    </view>
+  </Modal>
+</view>

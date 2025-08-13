@@ -1,0 +1,51 @@
+
+<!-- 上新剧透 -->
+<view class='footlist'>
+    <view class="foot-left">
+        <block tt:for="{{list}}" tt:key="{{ item.id }}">
+            <view class='footbox' catchtap='jumpdetail' id="{{item.id}}" wx:if="{{index%2==0}}" data-cover="{{item.banner}}" data-title="{{item.title}}">
+                <image class='cover' src="{{item.banner}}" mode="widthFix" lazy-load></image>
+                <view class="info-box">
+                    <text class="title">{{item.liveInfo.title}}</text>
+                    <view class="user-info">
+                        <view class="user-info-box">
+                            <image class="avatar" src="{{item.liveInfo.avatar}}"></image>
+                            <view class="user-info-right">
+                                <text class="username">{{item.liveInfo.userName}}</text>
+                            </view>
+                        </view>
+
+                        <view class="like">
+                            <image class="like-icon" src="../../assets/star-selected.png"></image>
+                            <text class="like-number">123</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <view class="foot-right">
+        <block tt:for="{{list}}">
+            <view class='footbox' catchtap='jumpdetail' catchlongtap="deletefoot" bindtouchend="touchend" id="{{item.id}}" tt:if="{{index%2==1}}" data-cover="{{item.banner}}" data-title="{{item.title}}">
+                <image class='cover' src="{{item.banner}}" mode="widthFix" lazy-load></image>
+                <view class="info-box">
+                    <text class="title">{{item.liveInfo.title}}</text>
+                    <view class="user-info">
+                        <view class="user-info-box">
+                            <image class="avatar" src="{{item.liveInfo.avatar}}"></image>
+                            <view class="user-info-right">
+                                <text class="username">{{item.liveInfo.userName}}</text>
+                            </view>
+                        </view>
+
+                        <view class="like">
+                            <image class="like-icon" src="../../assets/star-selected.png"></image>
+                            <text class="like-number">123</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

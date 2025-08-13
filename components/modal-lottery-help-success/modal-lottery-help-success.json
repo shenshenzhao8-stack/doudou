@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Modal": "/components/model-small-envelope-animation/model-small-envelope-animation"
+  }
+}

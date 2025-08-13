@@ -1,0 +1,6 @@
+<view class="address-container ">
+    <address-area class="address-view" bind:authorize="addressAuthHandler" bind:change="addressChangeHandler" bind:cancel="cancelHandler" bind:error="addressErrorHandler"> </address-area>
+    <view class="action-btn">
+        <view bindtap="confirmBtn">确认选择</view>
+    </view>
+</view>

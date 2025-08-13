@@ -1,0 +1,40 @@
+<view class="container">
+
+
+    <view class="loading" tt:if="{{loading}}">
+        <text>加载中...</text>
+    </view>
+
+    <scroll-view class="waterfall-container" scroll-y="true" bindscroll="onScroll" tt:else lower-threshold="{{100}}" bindscrolltolower="lower">
+        <view class="columns-wrapper">
+
+            <view class="waterfall-column">
+                <view class="waterfall-card {{activeCardId == item.id ? 'active' : ''}}" tt:for="{{columns[0].cards}}" tt:key="item.id" data-id="{{item.id}}">
+                    <view class="live-container" tt:if="{{activeCardId == item.id}}" style="height: {{item.height}}rpx;">
+                        <live-preview class="live" tt:if="{{activeCardId == item.id}}" awemeId="{{item.awemeid}}" hide-header="{{hideHeader}}" bindUserPage="onPreviewUserPage" bindLiveRoom="onPreviewLiveRoom" bindLiveStatus="onPreviewLiveStatus" style="height: {{item.height}}rpx;"></live-preview>
+                    </view>
+                    <image src="{{item.image}}" tt:else mode="aspectFill" class="card-image" />
+                    <view class="card-info">
+
+                        <text class="card-title">{{item.title}} </text>
+                        <text class="card-price" tt:if="{{item.description}}">{{item.description}}</text>
+                    </view>
+                </view>
+            </view>
+
+
+            <view class="waterfall-column">
+                <view class="waterfall-card {{activeCardId == item.id ? 'active' : ''}}" tt:for="{{columns[1].cards}}" tt:key="item.id" data-id="{{item.id}}">
+                    <view class="live-container" tt:if="{{activeCardId == item.id}}">
+                        <live-preview class="live" tt:if="{{activeCardId == item.id}}" awemeId="{{item.awemeid}}" hide-header="{{hideHeader}}" bindUserPage="onPreviewUserPage" bindLiveRoom="onPreviewLiveRoom" bindLiveStatus="onPreviewLiveStatus"></live-preview>
+                    </view>
+                    <image src="{{item.image}}" tt:else mode="aspectFill" class="card-image" />
+                    <view class="card-info">
+                        <text class="card-title">{{item.title}}</text>
+                        <text class="card-price" tt:if="{{item.description}}">{{item.description}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

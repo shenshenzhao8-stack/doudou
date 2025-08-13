@@ -1,0 +1,26 @@
+<view>
+  <Modal visible="{{visible}}" bind:cancel="handleCanel">
+    <view slot="content">
+      <view class="modal-lottery-title">恭喜你中签啦！</view>
+      <view class="modal-lottery-content">
+        <text>获得购买资格</text>
+        <view class="image-box">
+          <image src="{{detail.image_url}}"></image>
+        </view>
+        <text class="modal-lottery-content-description">
+          {{detail.title}}
+        </text>
+      </view>
+    </view>
+    <view slot="footer" class="modal-lottery-footer">
+      <view class="id">
+        中签ID: <text>{{code || '-'}}</text>
+      </view>
+      <button class="modal-lottery-footer-button glossy-flow" bindtap="handleTap" >复制ID联系客服</button>
+      <view class="modal-lottery-footer-info">
+        请于「截止购买」日期前联系客服，逾期资格作废
+      </view>
+    </view>
+  </Modal>
+  <image src="{{OSS_URL}}/caidai.gif" class="caidai" tt:if="{{visible}}"></image>
+</view>

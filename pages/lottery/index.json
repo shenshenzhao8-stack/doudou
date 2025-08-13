@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "尖货抽签",
+  "usingComponents": {
+    "CardCommodity": "/components/card-commodity/card-commodity",
+    "Banner": "/components/index-banner/index-banner"
+  },
+  "navigationStyle": "custom"
+}

@@ -1,0 +1,394 @@
+/* index.wxss */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.dou_tips {
+    /* 图标与文本容器横向排列 */
+    position: absolute;
+    top: 142rpx;
+    left: 76rpx;
+    width: 578rpx;
+    height: 76rpx;
+    color: #fff;
+    font-family: 'DOUYINSANSBOLD';
+    z-index: 10;
+    text-align: left;
+    font-size: 24rpx;
+}
+.notice_icon{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+.notice_tit{
+    z-index: 2;
+    position: absolute;
+    left: 90rpx;
+    top: 20rpx;
+    font-size: 22rpx;
+    color: #FDFFE8;
+    font-family: DOUYINSANSBOLD;
+}
+.video_muted {
+    z-index: 10;
+    position: absolute;
+    top: 54rpx;
+    right: 76rpx;
+    width: 42rpx;
+    height: 36rpx;
+}
+
+.game_rules {
+    z-index: 10;
+    position: absolute;
+    top: 54rpx;
+    left: 76rpx;
+    width: 189rpx;
+    height: 61rpx;
+}
+
+video {
+    width: 100vw;
+    height: 100%;
+}
+
+.lottery-video {
+    width: 100%;
+    height: 500rpx;
+    border-radius: 20rpx;
+    margin-top: 60rpx;
+    box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.3);
+    background: #000;
+}
+
+.drawTit {
+    position: absolute;
+    bottom: 70rpx;
+    font-size: 26rpx;
+    color: #fff;
+    z-index: 10;
+    font-family: DOUYINSANSBOLD;
+}
+
+
+/* 关键帧动画 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 78, 80, 0.7);
+    }
+
+    70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 12px rgba(255, 78, 80, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 78, 80, 0);
+    }
+}
+
+/* 按钮抖动动画 */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8rpx);
+    }
+
+    50% {
+        transform: translateX(8rpx);
+    }
+
+    75% {
+        transform: translateX(-8rpx);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+
+
+
+.poster_gif_view {
+    width: 750rpx;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.poster_gif {
+    width: 100%;
+    height: 100%;
+}
+
+.lottery-btn {
+    width: 300rpx;
+    height: 90rpx;
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+}
+
+
+.title {
+    font-size: 36rpx;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40rpx;
+    font-weight: bold;
+}
+
+.action-jump {
+    background: #eee;
+    color: #333;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 48rpx;
+    margin: 40rpx 0;
+}
+
+.chance-text {
+    color: #999;
+    font-size: 24rpx;
+    text-align: center;
+}
+
+
+.icon-circle {
+    width: 160rpx;
+    height: 160rpx;
+    background: #eee;
+    border-radius: 50%;
+    margin: 40rpx auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smile-icon {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.text-main {
+    font-size: 32rpx;
+    color: #333;
+    text-align: center;
+    margin: 24rpx 0;
+}
+
+.text-sub {
+    font-size: 28rpx;
+    color: #666;
+    text-align: center;
+}
+
+/* 中奖弹窗特殊样式 */
+.win-popup {
+    border: 2rpx solid #ccc;
+}
+
+.amount-box {
+    background: #eee;
+    border-radius: 16rpx;
+    padding: 32rpx;
+    margin: 40rpx 0;
+    text-align: center;
+}
+
+.amount {
+    font-size: 64rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.dashed-line {
+    border-bottom: 2rpx dashed #ff0000;
+    margin: 24rpx auto;
+    width: 80%;
+}
+
+.tag {
+    font-size: 28rpx;
+    color: #fff;
+    background: #ff0000;
+    padding: 8rpx 24rpx;
+    border-radius: 24rpx;
+}
+
+
+
+.tip {
+    font-size: 24rpx;
+    color: #666;
+    text-align: center;
+}
+
+
+
+@keyframes popupScale {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.fireworks-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+
+.prize-content {
+    padding: 50rpx 40rpx;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.congrats {
+    font-size: 42rpx;
+    font-weight: bold;
+    color: #e74c3c;
+    display: block;
+    margin-bottom: 40rpx;
+}
+
+.prize-image {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 20rpx;
+    margin: 0 auto 30rpx;
+    border: 4rpx solid #f1c40f;
+}
+
+.prize-name {
+    font-size: 36rpx;
+    color: #2c3e50;
+    margin-bottom: 50rpx;
+    display: block;
+    font-weight: bold;
+}
+
+.confirm-btn {
+    width: 60%;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    font-size: 32rpx;
+    border-radius: 40rpx;
+}
+
+video[style*="opacity: 0"] {
+    position: absolute;
+    z-index: -1;
+}
+
+/* 弹窗样式 */
+.rules_popup {
+    width: 100%;
+    height: 849rpx;
+}
+
+.rule-container {
+    position: absolute;
+    top: 40rpx;
+    width: 450rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(100% - 80rpx);
+    overflow: hidden;
+}
+
+.desc {
+    font-size: 28rpx;
+    color: #fff;
+    text-align: center;
+    margin: 24rpx 0;
+}
+
+.rules_close-btn {
+    position: absolute;
+    bottom: -100rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48rpx;
+    color: #999;
+    width: 81rpx;
+    height: 81rpx;
+}
+
+.rules_con {
+    font-size: 30rpx;
+}
+
+.rules_tit {
+    margin-top: 10rpx;
+    text-align: left;
+    font-size: 20rpx;
+}
+
+.rules_popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    border-radius: 30rpx;
+    z-index: 10;
+    height: 832rpx;
+    animation: popupScale 0.5s;
+    margin-top: -100rpx;
+}
+
+.rules_popup_bg {
+    width: 100%;
+    height: 849rpx;
+}
+
+
+
+
+
+
+

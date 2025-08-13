@@ -1,0 +1,8 @@
+<view>
+    <Modal visible="{{isCode}}" bind:cancel="handleCanel">
+        <view class="code_popup">
+            <image src="https://mini-app.tos-cn-beijing.volces.com/images/code_popup.png" class="code_popup_bg"></image>
+            <image src="/assets/doudou/close.png" class="code_close-btn" bindtap="handleCanel"></image>
+        </view>
+    </Modal>
+</view>

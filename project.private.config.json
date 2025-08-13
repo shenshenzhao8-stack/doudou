@@ -1,0 +1,23 @@
+{
+    "setting": {
+        "urlCheck": false,
+        "bigPackageSizeSupport": true
+    },
+    "condition": {
+        "miniprogram": {
+            "current": -1,
+            "list": [
+                {
+                    "id": 1754994578506,
+                    "name": "pages/lottery/index",
+                    "pathName": "pages/lottery/index",
+                    "query": "",
+                    "scene": "990001",
+                    "launchFrom": "scan",
+                    "location": "qr_code",
+                    "mockUpdateType": "Noupdate"
+                }
+            ]
+        }
+    }
+}

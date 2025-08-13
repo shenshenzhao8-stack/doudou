@@ -1,0 +1,504 @@
+.lottery-detail {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 58%, #FBF7FA 100%), linear-gradient(180deg, #ECE7F4 0%, #D7D0F7 44%, #B2B6F1 100%);
+}
+
+/* 上面详情图 */
+.detail-image {
+  height: 832rpx;
+  width: 100%;
+  position: relative;
+}
+
+.detail-image image {
+  width: 100%;
+  height: 100%;
+}
+
+.detail-image .participate {
+  height: 40rpx;
+  padding: 0 20rpx;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  border: 1rpx solid #F2F2F2;
+  opacity: 0.8;
+  position: absolute;
+  top: 210rpx;
+  left: 16rpx;
+  display: flex;
+  align-items: center;
+}
+
+.detail-image .participate image {
+  margin-left: 4rpx;
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 50%;
+}
+
+.detail-image .participate text {
+  height: 28rpx;
+  font-family: PingFang-SC, PingFang-SC;
+  font-weight: bold;
+  font-size: 20rpx;
+  color: #666666;
+  line-height: 28rpx;
+  text-align: left;
+  font-style: normal;
+  margin-left: 8rpx;
+}
+
+.detail-image .title {
+  width: 590rpx;
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 600;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  line-height: 42rpx;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-style: normal;
+  position: absolute;
+  bottom: 225rpx;
+  left: 50%;
+  right: -50%;
+  transform: translateX(-50%);
+}
+
+.detail-image .button-gather {
+  width: 390rpx;
+  height: 94rpx;
+  position: absolute;
+  bottom: 76rpx;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.detail-image .lottery-button-position {
+  width: 100%;
+  position: absolute;
+  bottom: 86rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-image .lottery-button {
+  display: inline-table;
+  height: 72rpx;
+  background: linear-gradient(270deg, #8967D9 0%, #987ADB 38%, #BB97FA 100%);
+  border-radius: 10rpx;
+  font-family: SourceHanSansCNVF, SourceHanSansCNVF;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  line-height: 72rpx;
+  letter-spacing: 2px;
+  text-align: center;
+  font-style: normal;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.detail-image .draw-now-button {
+  width: 390rpx;
+}
+
+/* 动画 start */
+.enlarge {
+  animation: enlarge 2s infinite linear;
+}
+
+@keyframes enlarge {
+  0% {
+    transform: scale(0.9);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  80% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+/* end */
+
+.increase-the-probability {
+  width: 507rpx;
+}
+
+.detail-image .in-progress {
+  width: 390rpx;
+  background: linear-gradient(90deg, #8F8F8F 0%, #808080 100%);
+}
+
+.detail-image .is-lottery {
+  width: 390rpx;
+}
+
+.detail-image .lottery-detail-num {
+  position: absolute;
+  bottom: 180rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-image .lottery-detail-num .line {
+  height: 29rpx;
+  border: 1rpx solid #FFFFFF;
+  opacity: 0.6;
+  margin-left: 38rpx;
+  margin-right: 38rpx;
+}
+
+.detail-image .lottery-detail-num .price {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.detail-image .lottery-detail-num .price .actual-price {
+  font-family: PingFang-SC, PingFang-SC;
+  font-weight: bold;
+  font-size: 16rpx;
+  color: #FFFFFF;
+  line-height: 32rpx;
+  text-align: left;
+  font-style: normal;
+  position: relative;
+  opacity: 0.6;
+  margin-left: 16rpx;
+}
+
+.detail-image .lottery-detail-num .price .actual-price::after {
+  content: "";
+  width: 100%;
+  border: 1px solid #FFFFFF;
+  position: absolute;
+  left: 0;
+  top: 42%;
+}
+
+.detail-image .lottery-detail-num .price .discount {
+  font-family: PingFang-SC, PingFang-SC;
+  font-weight: bold;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  line-height: 40rpx;
+  text-align: left;
+  font-style: normal;
+}
+
+.detail-image .lottery-detail-num .limit-quantity {
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 400;
+  font-size: 26rpx;
+  color: #FFFFFF;
+  line-height: 26rpx;
+  text-align: left;
+  font-style: normal;
+}
+
+.detail-image .rules {
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8rpx;
+  position: absolute;
+  right: 22rpx;
+  top: 210rpx;
+  font-weight: 400;
+  font-size: 20rpx;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+/* 详情页商品图 */
+.lottery-centent {
+  position: absolute;
+  top: 776rpx;
+  width: 100%;
+}
+
+.progress {
+  width: 714rpx;
+  height: 133rpx;
+  background: #373737;
+  border-radius: 12rpx;
+  margin: 0 auto;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.progress-line {
+  position: absolute;
+  width: 201rpx;
+  height: 2rpx;
+  background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  top: 67rpx;
+}
+
+.progress-line.one {
+  left: 137rpx;
+}
+
+.progress-line.two {
+  right: 140rpx;
+}
+
+.progress-item {
+  height: 100%;
+  width: 140rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-item text:nth-child(1) {
+  height: 33rpx;
+  font-family: PingFang-SC, PingFang-SC;
+  font-weight: bold;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  line-height: 33rpx;
+  text-align: center;
+  font-style: normal;
+}
+
+.progress-item text:nth-child(2) {
+  display: inline-block;
+  ;
+  width: 12rpx;
+  height: 12rpx;
+  border: 1px solid rgba(190, 198, 194, .6);
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin-top: 6rpx;
+  margin-bottom: 12rpx;
+}
+
+.progress-item text:nth-child(3) {
+  height: 26rpx;
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 300;
+  font-size: 21rpx;
+  color: #FFFFFF;
+  line-height: 26rpx;
+  text-align: center;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.progress-item .finish {
+  border: 0;
+  background: #7DE4AA;
+}
+
+.progress-item .white-spot {
+  background-color: #fff;
+}
+
+.separation {
+  width: 702rpx;
+  margin: 0 auto;
+  border: 2rpx dashed #373737;
+}
+
+.number-of-winning-tickets {
+  height: 76rpx;
+  width: 714rpx;
+  margin: 0 auto;
+  background: #373737;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  box-sizing: border-box;
+}
+
+.number-of-winning-tickets-show {
+  height: 26rpx;
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  line-height: 26rpx;
+  text-align: left;
+  font-style: normal;
+
+}
+
+.number-of-winning-tickets-button-warn {
+  display: flex;
+  align-items: center;
+}
+
+.number-of-winning-tickets-button-warn text {
+  font-weight: normal;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  line-height: 26rpx;
+  letter-spacing: 1px;
+  text-align: left;
+  font-style: normal;
+  margin-right: 8rpx;
+}
+
+.switch-space {
+  width: 59rpx;
+  height: 32rpx;
+  background: #7759CD;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+}
+
+.off {
+  background-color: #666666;
+}
+
+.on {
+  justify-content: end;
+}
+
+.switch-space .round {
+  width: 27rpx;
+  height: 27rpx;
+  background: #FFFFFF;
+  border-radius: 50%;
+}
+
+.draw-winner {
+  background-color: #373737;
+  width: 714rpx;
+  margin: 0 auto;
+  background: #373737;
+  border-radius: 12rpx;
+  padding-bottom: 26rpx;
+}
+
+.draw-winner .name:last-child {
+  padding-bottom: 0rpx;
+}
+
+.draw-winner .title {
+  width: 100%;
+  height: 26rpx;
+  font-family: 'DOUYINSANSBOLD';
+  font-weight: normal;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  line-height: 26rpx;
+  text-align: center;
+  font-style: normal;
+  padding-top: 22rpx;
+  padding-bottom: 16rpx;
+}
+
+.draw-winner .name {
+  width: 100%;
+  height: 26rpx;
+  font-family: PingFangSC, PingFang SC;
+  display: block;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #b4acac;
+  line-height: 26rpx;
+  text-align: center;
+  font-style: normal;
+  padding-bottom: 12rpx;
+}
+
+.product-details {
+  width: 100%;
+  margin-top: 24rpx;
+}
+
+.product-details .details-image {
+  width: 100%;
+  display: block;
+}
+
+.product-details-title {
+  width: 100%;
+  height: 100rpx;
+  background: #FFFFFF;
+  border-radius: 40rpx 40rpx 0rpx 0rpx;
+  font-family: FZLTCHJW--GB1, FZLTCHJW--GB1;
+  font-weight: 900;
+  font-size: 34rpx;
+  color: #333333;
+  line-height: 100rpx;
+  letter-spacing: 2px;
+  text-align: center;
+  font-style: normal;
+}
+
+.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 176rpx;
+  background: #FFF;
+  /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05); */
+  opacity: 0;
+  transition: opacity 2s cubic-bezier(0.33, 1, 0.68, 1);
+  z-index: 9;
+}
+
+.cover-show {
+  opacity: 1;
+}
+
+.page-left-title {
+  position: fixed;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  text-align: left;
+  z-index: 11;
+  text-shadow: 0px 2px 4px rgb(0 0 0 / 50%);
+}
+
+.cover-show-page-left-title {
+  color: #000;
+  text-shadow: none;
+}
+
+.error-not-data {
+  margin-top: 160rpx;
+  width: 100%;
+  text-align: center;
+}
+
+.error-not-data image {
+  width: 250rpx;
+  height: 200rpx;
+  
+}

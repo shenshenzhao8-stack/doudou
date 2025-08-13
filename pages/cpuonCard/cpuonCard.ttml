@@ -1,0 +1,15 @@
+
+<coupon-card 
+    shop-id="{{shopId}}" 
+    coupon-id="{{couponId}}" 
+    bind:error="handleCouponError" 
+    bind:success="handleCouponSuccess"
+    bind:use="handleCouponUse"
+    title="{{cpuonTit}}"
+    sub-title="领取后请到对应店铺中使用"
+    button-options="{{buttonOptions}}"
+    modal-options="{{modalOptions}}"
+    is-show-button-only="{{}}"
+    is-show-coupon-info="{{true}}"
+    >
+</coupon-card>

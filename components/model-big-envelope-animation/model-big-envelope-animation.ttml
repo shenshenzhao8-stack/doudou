@@ -1,0 +1,38 @@
+<view>
+  <Modal visible="{{visible}}" bind:cancel="handleCanel">
+    <view class="model-envelope-animation">
+
+      <view class="button">
+        <view class="button-content">
+          <image src="{{OSS_URL}}/envelope-big-01.png" class="envelope-01"></image>
+          <view class="button-content-ops">
+            <slot name="button"></slot>
+          </view>
+        </view>
+      </view>
+
+      <image src="{{OSS_URL}}/envelope-big-02.png" class="envelope-02"></image>
+
+      <view class="content">
+        <view class="content-text">
+          <image src="{{OSS_URL}}/envelope-big-04.png" class="envelope-04"></image>
+          <view>
+            <slot name="content"></slot>
+          </view>
+        </view>
+      </view>
+
+      <view class="footer">
+        <view class="footer-content">
+          <image src="{{OSS_URL}}/envelope-big-03.png" class="envelope-03"></image>
+          <view class="footer-ops">
+            <slot name="footer"></slot>
+            <view class="button-content-ops">
+              <slot name="button"></slot>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </Modal>
+</view>

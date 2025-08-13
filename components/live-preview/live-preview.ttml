@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="page-body">
+    <view class="page-body-wrapper">
+      <text class="page-body-title">
+        小程序直播预览流组件：
+      </text>
+      <view>
+        <live-preview awemeId="176793430" binderror="onPreviewError" hideHeader="{{hideHeader}}"
+          bindUserPage="onPreviewUserPage" bindLiveRoom="onPreviewLiveRoom" bindLiveStatus="onPreviewLiveStatus">
+        </live-preview>
+      </view>
+      <button class="page-body-btn" ontap="hideHeader">点击不展示头部区域</button>
+      <view class='page-body-text'>
+        直播状态：{{liveStatus}}
+      </view>
+    </view>
+  </view>
+</view>

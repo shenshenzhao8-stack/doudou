@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/lottery/index",
+    "pages/lottery-detail/index",
+    "pages/my/my",
+    "pages/address/index",
+    "pages/card/index",
+    "pages/dou/dou",
+    "pages/participate/participate",
+    "pages/cpuonCard/cpuonCard",
+    "pages/user-agreement/user-agreement",
+    "pages/calendar/calendar"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "抖音商城上新了",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "##9A9A9A",
+    "selectedColor": "#785ACD",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./assets/index_icon.png",
+        "selectedIconPath": "/assets/house-selected1.png"
+      },
+      {
+        "pagePath": "pages/lottery/index",
+        "text": "尖货抽签",
+        "iconPath": "./assets/sharp-goods-lottery.png",
+        "selectedIconPath": "./assets/sharp-goods-lottery-selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./assets/user.png",
+        "selectedIconPath": "./assets/user-selected.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于提供个性化服务及体验"
+    }
+  },
+  "plugins": {
+    "myPlugin": {
+      "version": "*",
+      "provider": "tt95aee3130ae1cbe911"
+    }
+  }
+}

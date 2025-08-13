@@ -1,0 +1,36 @@
+<view class="swiper-container">
+    <swiper class="swiper" tt:if="{{autoplay}}" autoplay="{{autoplay}}" current="{{current}}" circular="{{true}}" indicator-dots="{{false}}"  bindchange="handleChange">
+        <block tt:for="{{productList}}" tt:for-index="index" tt:for-item="item">
+            <swiper-item>
+                <view class="swiper-item-box" bind:tap="handleSwiper" data-item="{{item}}" data-index="{{index}}">
+                    <view class="item-info slide-animate" tt:if="{{current === index}}">
+                        <text class="item-info-title {{source=='lottery-detail' ? 'lottery-detail-title' : ''}}">{{item.title}}</text>
+                        <view class="btn-box" bindchange="handleChange" tt:if="{{source !== 'lottery-detail'}}">
+                            <view class="buy-btn {{pulseBtn ? 'pulse-animate' : ''}}" tt:if="{{item.jump_type === 1}}">立刻购买</view>
+                            <view class="draw-lots-btn {{pulseBtn ? 'pulse-animate' : ''}}" tt:if="{{item.jump_type === 3}}">立即抽签</view>
+                        </view>
+                        <view class="draw-lots-btn pulse-animate" tt:if="{{source=='lottery-detail'}}">
+                            立即抽签
+                        </view>
+                    </view>
+                    <view class="item-info" tt:if="{{current !== index}}">
+                        <text class="item-info-title">{{item.title}}</text>
+                        <view class="btn-box" tt:if="{{source !== 'lottery-detail'}}">
+                            <view class="buy-btn" tt:if="{{item.jump_type === 1}}">立刻购买</view>
+                            <view class="draw-lots-btn" tt:if="{{item.jump_type === 3}}">立即抽签</view>
+                        </view>
+                        <view class="draw-lots-btn pulse-animate" tt:if="{{source=='lottery-detail'}}">
+                            立即抽签
+                        </view>
+                    </view>
+                    <image class="swiper-img" src="{{item.image_url}}"></image>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="current-dot">
+        <block tt:for="{{productList}}" tt:for-index="index">
+            <view class="dot {{index==current?'dot-on':''}}"></view>
+        </block>
+    </view>
+</view>

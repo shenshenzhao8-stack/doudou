@@ -1,0 +1,14 @@
+<scroll-view refresher-enabled scroll-y class="lottery" bindrefresherrefresh="onRefreshRefresh" refresher-triggered="{{isRefreshTriggered}}" bindscrolltolower="handleBindscrolltolower">
+  <view class="participants">
+    <view class="list-data" tt:if="{{dataPage.length > 0}}">
+      <CardCommodity item-class="{{index === dataPage.length - 1 ? 'last-item' : ''}}" bindtap="handleLotteryClick" tt:for="{{dataPage}}" detail="{{item.sell_desc}}" isMyPage="{{true}}" id="{{item.id}}" item="{{item}}" title="{{item.title}}" isMyParticipate="{{true}}" imageUrl="{{item.image_url}}" page_name="my" price="{{item.price}}" list_price="{{item.list_price}}" limit_num="{{item.limit_num}}" status="{{item.status}}" publish_time={{item.publish_time}} isDrawCompletedShow="{{type === 2}}" />
+    </view>
+
+    <view class="not-data" tt:if="{{dataStatus === 'not-more-data'}}">暂无更多数据</view>
+    <view class="not-data" tt:if="{{dataStatus === 'loading'}}">Loading...</view>
+    <view class="not-data" tt:if="{{dataStatus === 'not-data'}}">
+      <image src="{{OSS_URL}}/lottery-not-data.png" tt:if="{{type === 2}}"></image>
+      <text class="noshop-tip-title">暂无参与的奖品，快去参与抽签活动吧~</text>
+    </view>
+  </view>
+</scroll-view>

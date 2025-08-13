@@ -1,0 +1,21 @@
+<view>
+  <Modal visible="{{visible}}" bind:cancel="handleCanel">
+    <view slot="content">
+      <view class="modal-lottery-title">助力成功</view>
+      <view class="modal-lottery-content">
+        <text>恭喜获得</text>
+        <image src="{{OSS_URL}}/lotterr-good-luck-lottery.png" class="modal-lottery-good-luck-lottery"></image>
+        <text>好运签越多，抽中概率越大</text>
+      </view>
+    </view>
+    <view slot="footer">
+      <view class="modal-lottery-footer-time">
+        本场公布:
+        <text>{{detail.publish_time}}</text>
+      </view>
+    </view>
+    <view slot="button">
+      <button class="modal-lottery-footer-button" bindtap="handleTap">做任务继续获签</button>
+    </view>
+  </Modal>
+</view>

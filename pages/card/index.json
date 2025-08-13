@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "drawlostlist" :"/components/drawLostList/index",
+        "Modal": "/components/modal/modal",
+        "ModalCode": "/components/modal-code/modal-code"
+    },
+    "navigationBarTitleText": "卡券包"
+}

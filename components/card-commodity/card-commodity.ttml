@@ -1,0 +1,56 @@
+<view class="item item-class {{isMyPage ? 'myPage' : ''}}">
+  <view class="left">
+    <image src="{{imageUrl}}"></image>
+    <view class="right-top {{status}}">
+      <view class="indicator" />
+
+      <view class="status" tt:if="{{status === 'in-progress'}}">进行中</view>
+      <view class="status" tt:if="{{status === 'to-be-announced'}}">待公布</view>
+      <view class="status" tt:if="{{status === 'ended'}}">已结束</view>
+      <view class="status" tt:if="{{status === 'not-started'}}">未开始</view>
+    </view>
+  </view>
+  <view class="right">
+    <view class="right-top">
+      <view class="title {{isShowTwoRow ? 'line-clamp-two' : 'line-clamp-one'}}">
+        {{title}}
+      </view>
+      <view class="description line-clamp-one" tt:if="{{detail}}">
+        {{detail}}
+      </view>
+      <view class="participants">
+        <view class="participation-information">
+          <view class="participate" tt:if="{{item.signup_num > 10}}">
+            {{item.signup_num}} 人正在参与
+          </view>
+          <view class="lucky-lottery {{isMyParticipate ? 'is-draw-completed' : ''}} {{item.signup_num > 10 ? '' : 'signup_num'}}" tt:if="{{isMyParticipate}}">
+            幸运签（{{item.has_draw_times}}/{{item.total_draw_times}}）
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="lottery-footer">
+      <view class="announcement">
+        {{publishTime}} 公布中签结果
+      </view>
+      <view class="lottery-button">
+        <image src="{{OSS_URL}}/lottery-button.png"></image>
+        <view class="lottery-content {{isMyPage ? 'my-lottery-content' : ''}}">
+          <view class="price">
+            ¥{{listPriceYuan || "0.00"}}
+          </view>
+          <view class="quantity" tt:if="{{list_price < price}}">
+            <text>¥</text>
+            <text>{{Yuan}}</text>
+          </view>
+        </view>
+        <view class="draw-now" bindtap="handleTap" tt:if="{{!isMyParticipate}}">
+          立即抽签
+        </view>
+        <view class="draw-now" bindtap="handleTap" tt:if="{{isMyParticipate}}">
+          {{ isAfterTarget ? '去查看' : '提升概率' }}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

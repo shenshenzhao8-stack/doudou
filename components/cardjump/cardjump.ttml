@@ -1,0 +1,17 @@
+<!-- /Users/kaiyang/Desktop/He/frontend-doudou-mini/components/cardjump/cardjump.ttml -->
+<coupon-card 
+   shop-id="5893575" 
+   coupon-id="7510326852876222774" 
+   class={styles.myClass}
+   style="background-color:red;"
+   title="优惠券111"
+   sub-title="请到店铺使用"
+   img-url={aPic}
+   button-options="{{buttonOptions}}"
+   modal-options="{{modalOptions}}"
+   is-show-button-only={false}
+   is-show-coupon-info={true}
+   bind:error="handleCouponError"
+   bind:success="handleCouponSuccess"
+>
+</coupon-card>

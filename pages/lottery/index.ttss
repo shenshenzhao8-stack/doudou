@@ -1,0 +1,122 @@
+.lottery {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.content {
+  background-color: #fafafa;
+  border-radius: 40rpx 40rpx 0rpx 0rpx;
+  width: 100%;
+  z-index: 1;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.not-data {
+  font-size: 22rpx;
+  text-align: center;
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.not-data-image {
+  padding-top: 174rpx;
+}
+
+.not-data image {
+  width: 250rpx;
+  height: 200rpx;
+}
+
+.content .tabs {
+  border-radius: 40rpx 40rpx 0rpx 0rpx;
+  box-sizing: border-box;
+  height: 98rpx;
+  padding-top: 30rpx;
+  padding-bottom: 28rpx;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: #FFFFFF;
+  position: sticky;
+  z-index: 99;
+}
+
+.content .tabs .separation::after {
+  content: '|';
+  color: #D8D8D8;
+}
+
+.content .tabs .tab-item {
+  color: #666666;
+  font-size: 28rpx;
+  font-weight: 800;
+  line-height: 40rpx;
+}
+
+.content .tabs .select {
+  position: relative;
+  color: #000000;
+}
+
+.content .tabs .select::after {
+  content: '';
+  width: 48rpx;
+  height: 8rpx;
+  background: #785ACD;
+  border-radius: 4rpx;
+  position: absolute;
+  bottom: -10rpx;
+  left: 25%;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+.list {
+  width: 100%;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  box-sizing: border-box;
+}
+
+.custom-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 176rpx; */
+  background: rgba(156, 132, 219, 1);
+  z-index: 2;
+}
+
+.not-banner {
+  top: 176rpx;
+}
+
+.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 176rpx;
+  background: rgba(156, 132, 219, 1);
+  /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05); */
+  opacity: 0;
+  transition: opacity 2s cubic-bezier(0.33, 1, 0.68, 1);
+  z-index: 2;
+}
+
+.cover-show {
+  opacity: 1;
+}
+
+.custom-icon {
+  position: fixed;
+  display: block;
+  width: 140px;
+  height: 30px;
+  z-index: 3;
+}

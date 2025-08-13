@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "CardCommodity": "/components/card-commodity/card-commodity"
+    },
+    "navigationBarTitleText": "已参与"
+}
